@@ -1,7 +1,7 @@
 #app {
   height:100vh;
   overflow:hidden;
-  background:url(../../public/images/pokedex-frames-desktop.png)no-repeat;
+  
   background-size:100% 100%;
   padding:0;
   #top-banner {
@@ -23,8 +23,8 @@
       }
   }
   #grid-background{
-   background:#007F15;
-    position:absolute;
+   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgwATGUIxTghAm3kTqKxxAN1LXagDZFgjFdHIgnwAAAABJRU5ErkJggg==)repeat, #007F15;
+   position:absolute;
     z-index:1;
     padding:0;
     height:100%

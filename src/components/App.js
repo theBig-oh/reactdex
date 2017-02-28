@@ -15,12 +15,13 @@ function GridBlocks() {
 	this.blocks = 600;
 	this.interId = 0;
 }
-function makeBlock(x,y,size,velocity,direction){
+function makeBlock(x,y,size,velocity,direction,angle){
 	this.x = x;
 	this.y = y;
 	this.size = size;
 	this.velocity = velocity;
 	this.direction = direction;
+	this.angle = angle;
 };
 
 GridBlocks.prototype = {
@@ -76,19 +77,23 @@ GridBlocks.prototype = {
 			
 
 		
-			var deltaAngle = Math.sin(Math.PI / (Math.random() * (2 - 0) + 0 ));
+			
 			var block = this.blocks[i];
 			if(block.direction == true){
 					block.x += deltaTime * block.velocity;
 
+					
+
+
 				if(block.x > this.width+40){
-					this.blocks[i] = new makeBlock(this.width/2,Math.random()*this.height,Math.random()*3+1,(Math.random()*(this.maxSpeed - this.minSpeed))+this.minSpeed,true);
+					var deltaAngle = Math.sin(Math.PI / (Math.random() * (2 - 0) + 0 ));
+					this.blocks[i] = new makeBlock(this.width/2,Math.random()*this.height,Math.random()*3+1,(Math.random()*(this.maxSpeed - this.minSpeed))+this.minSpeed,true,deltaAngle);
 				}
 			} else {
 				block.x -= deltaTime * block.velocity;
-
+				var deltaAngle = Math.sin(Math.PI / (Math.random() * (2 - 0) + 0 ));
 				if(block.x < -40){
-					this.blocks[i] = new makeBlock(this.width/2,Math.random()*this.height,Math.random()*3+1,(Math.random()*(this.maxSpeed - this.minSpeed))+this.minSpeed,false);
+					this.blocks[i] = new makeBlock(this.width/2,Math.random()*this.height,Math.random()*3+1,(Math.random()*(this.maxSpeed - this.minSpeed))+this.minSpeed,false,deltaAngle);
 				}
 			}
 
@@ -113,6 +118,9 @@ GridBlocks.prototype = {
 
 	}
 };
+
+
+
 
 function getPKMN() {
  	return new Promise(function(resolve,reject){
@@ -192,13 +200,13 @@ setStatePKMN() {
   render() {
     return (
      <div id='app'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 pokemon-large'>
-     	<div ref='gridcanvas'id='grid-background'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'></div>
+     	<div ref='gridcanvas'id='grid-background'className="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
 
-     	<div id='top-banner'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'> <div id='blue-jewel'className=''></div></div>
+     	<div id="top-banner" className="col-xs-12 col-sm-12 col-md-12 col-lg-12" > <div id="blue-jewel" className=''> </ div></div>
      	
 
      	<div id='body'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-     	<Home />
+     	<Home pokemonList={this.state.data} />
      
 
      	</div>
