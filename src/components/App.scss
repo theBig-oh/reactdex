@@ -1,0 +1,59 @@
+#app {
+  height:100vh;
+  overflow:hidden;
+  background:url(../../public/images/pokedex-frames-desktop.png)no-repeat;
+  background-size:100% 100%;
+  padding:0;
+  #top-banner {
+    height:20%;
+   
+    position:relative;
+    z-index:2;
+      background:url(../../public/images/pokdex-frames_top.png)no-repeat;
+      background-size:101%104%;
+
+      #blue-jewel {
+        background:url(../../public/images/blue-jewel.png)no-repeat;
+        background-size:100%100%;
+        height:60%;
+        width:8%;
+        position:relative;
+        left:40%;
+        top:5%;
+      }
+  }
+  #grid-background{
+   background:#007F15;
+    position:absolute;
+    z-index:1;
+    padding:0;
+    height:100%
+  }
+  #body {
+    height:60%;
+    position:relative;
+    z-index:2;
+;  }
+  #bottom-banner{
+    height:20%;
+   
+    position:relative;
+    z-index:2;
+      background:url(../../public/images/pokdex-frames_bottom.png)no-repeat;
+      background-size:101%115%;
+
+      #green-jewels-container {
+        height:30%;
+        position:relative;
+        top:50%;
+        left:80%;
+
+        .green-jewel {
+        background:url(../../public/images/green-jewel.png)no-repeat;
+        background-size:100%100%;
+        height:100%;
+        margin-left:6%;
+        }
+      }
+  }
+}
