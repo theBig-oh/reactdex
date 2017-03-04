@@ -1,15 +1,22 @@
 #Home {
-	border:1px solid black;
+	
 	height:100%;
 
 
-	#Selection-window {
+	#selection-window {
 		height:100%;
 
 		.pokemon-selection {
 		
 		height:20%;
 		background:rgba(87,116,225,0.8);
+		margin-bottom:2%;
+
+		margin-left:6%;
+
+		font-size:3em;
+		color:red;
+
 		}
 	}
 

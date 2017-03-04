@@ -3,7 +3,7 @@ import './Home.scss';
 
 function Pokemon(props){
 	return (
-			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>{props.pokemonList}</div>
+			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>{props.pokemon.name}</div>
 
 
 		)
@@ -27,14 +27,26 @@ class Home extends Component {
 			totalPKMN: [],
 			currentPage: 0,
 			pkmnPerPage: 9,
-			currentShownPKMN: []
+			currentShownPKMN: [],
+			currentBase: 0
 			
 		} 
 		console.log(this.state);
 		
 	}
 	componentWillReceiveProps(nextProps) {
+		/*
+			This is really weird. 
 
+			The docs say I should use this.setState() also refered to self.setState() in there.
+
+			But it won't retrieve the pokemon list from the props. 
+
+			Right now, this is the "i'll patch it later" fix.
+
+			This also goes for app.js getPKMN function
+
+		*/
 
 
 
@@ -77,6 +89,9 @@ class Home extends Component {
 					collect.push(stuff[i]);
 				}
 			}
+			var base = this.state.currentBase;
+
+			base = startPKMN;
 
 
 			
@@ -86,11 +101,11 @@ class Home extends Component {
 	render(){
 		var stuff = this.state.pkmnlist;
 		var self = this;
-		
+		var currentPKMN = 9;		
 
 		
 		if(stuff){
-			this.pokeCollect(20);
+			this.pokeCollect(currentPKMN);
 		}
 		
 
@@ -99,8 +114,28 @@ class Home extends Component {
 
 		return (
 				<div id='Home'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-					
-						<Pokemon />
+					<div id='selection-window' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						{
+							/*
+								When trying to show multiple components with different values.
+
+								Use array.prototype.map() function. First arguement takes the object,
+
+								the second takes the index value.
+							*/
+
+							this.state.currentShownPKMN.map(function(pkmn, id){
+								return <Pokemon key={id} pokemon={pkmn} />
+
+							})
+
+						}
+
+					</div>
+					<div id='' className=''>
+						Prev | Next
+
+					</div>
 
 
 
