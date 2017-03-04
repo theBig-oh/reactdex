@@ -124,15 +124,50 @@ GridBlocks.prototype = {
 
 function getPKMN() {
  	return new Promise(function(resolve,reject){
- 		var xhr = new XMLHttpRequest();
+ 		if(localStorage){
+ 			if(localStorage.getItem('PKMNList')){
+ 				resolve(JSON.parse(localStorage.getItem('PKMNList')));
+
+ 				console.log('got it from localStorage');
+ 			}
+ 			else {
+ 				var xhr = new XMLHttpRequest();
+ 				let list;
+ 				xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
+
+ 				xhr.onload = function(){
+ 					if(xhr.status >= 200 && xhr.status < 400){
+ 						list = xhr.response;
+ 						localStorage.setItem('PKMNList',list);
+ 						console.log('localStorage is active, and PKMN List is saved');
+ 				
+ 						resolve(JSON.parse(list));
+
+
+
+ 						} else {
+ 							xhr.error();
+ 						}
+ 					}
+
+ 				xhr.error = function(){
+ 					console.log('failed at getting pokemon list');
+ 					reject(xhr.responseText);
+ 			
+ 				};
+
+ 				xhr.send();
+ 			}
+ 		} else {
+ 			var xhr = new XMLHttpRequest();
  		let list;
  		xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
 
  		xhr.onload = function(){
  			if(xhr.status >= 200 && xhr.status < 400){
  				list = xhr.response;
- 				localStorage.setItem('PKMNList',list);
- 				console.log('yo');
+ 				
+ 				console.log('No localStorage, got PKMN List');
  				
  				resolve(JSON.parse(list));
 
@@ -150,11 +185,12 @@ function getPKMN() {
  		};
 
  		xhr.send();
+ 		}
  	})
  };
 
 
-getPKMN();
+
 
 
 
@@ -163,26 +199,45 @@ constructor(){
 	super();
 
 	this.state = {
-		data: []
+		data: [],
+		maxPKMN: []
+		
 	}
 
 	this.setStatePKMN  = this.setStatePKMN.bind(this);
 }
 
 setStatePKMN() {
-	var stuff = this.state.data;
+/*	this.setState({
+		data: getPKMN().then(function(data){
+			var stuff = [];
+
+			for(var i=0;i < data.results.length;i++){
+				stuff.push(data.results[i]);
+			}
+
+			return stuff
+		}),
+		maxPKMN: this.state.data.length
+	})
+*/
+	
+	var self = this;
 
 	getPKMN().then(function(data){
+		var stuff = [];
 
-		var parsed = data.results;
-
-		for(var i = 0; i < parsed.length; i++){
-			stuff.push(parsed[i]);
-
+		for(var i=0; i < data.results.length; i++){
+			stuff.push(data.results[i]);
 		}
-		console.log(parsed);
+
+		self.setState({
+			data: stuff,
+			maxPKMN: stuff.length
+		})
+
 	})
-	
+
 }
 
 
@@ -206,7 +261,7 @@ setStatePKMN() {
      	
 
      	<div id='body'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-     	<Home pokemonList={this.state.data} />
+     	<Home pokemonList={this.state.data} maxPKMN={this.state.maxPKMN}/>
      
 
      	</div>
