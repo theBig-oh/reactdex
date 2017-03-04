@@ -128,7 +128,7 @@ function getPKMN() {
  			if(localStorage.getItem('PKMNList')){
  				resolve(JSON.parse(localStorage.getItem('PKMNList')));
 
- 				console.log('got it from localStorage');
+ 				console.log('Pokemon Data Loaded from localStorage');
  			}
  			else {
  				var xhr = new XMLHttpRequest();
@@ -179,7 +179,7 @@ function getPKMN() {
  		}
 
  		xhr.error = function(){
- 			console.log('failed');
+ 			console.log('failed getting pokemon data');
  			reject(null);
  			
  		};
@@ -191,7 +191,7 @@ function getPKMN() {
 
 
 
-
+getPKMN();
 
 
 class App extends Component {
@@ -225,7 +225,7 @@ setStatePKMN() {
 	var self = this;
 
 	getPKMN().then(function(data){
-		var stuff = [];
+		var stuff = self.state.data;
 
 		for(var i=0; i < data.results.length; i++){
 			stuff.push(data.results[i]);
@@ -241,18 +241,22 @@ setStatePKMN() {
 }
 
 
+ componentWillMount() {
+ 	
+
+ 	this.setStatePKMN();
+ 	
+ }
  componentDidMount() {
  	let canvas = ReactDOM.findDOMNode(this.refs.gridcanvas);
 
  	var gridfield = new GridBlocks();
  	gridfield.initialize(canvas);
  	gridfield.start();
-
- 	this.setStatePKMN();
  }
 
-
   render() {
+  	
     return (
      <div id='app'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 pokemon-large'>
      	<div ref='gridcanvas'id='grid-background'className="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
