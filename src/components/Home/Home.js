@@ -94,13 +94,9 @@ class Home extends Component {
 			var allpkmn = this.state.pkmnlist;
 			
 			var collect = this.state.currentShownPKMN;
-			var collectDiv = [];
-
-			this.setState({
-				currentShownPKMN: []
-			});
-
 			
+
+		
 
 
 			for(var i = startPKMN; i < startPKMN + this.state.pkmnPerPage; i++){
@@ -112,6 +108,18 @@ class Home extends Component {
 			}
 			
 
+			/*
+				Notes for myself later:
+
+				Kehv said to try this out 
+
+				 var end = startPKMN + this.state.pkmnPerPage;
+            collect.push(this.state.pkmnlist.slice(startPKMN, end));(edited)
+
+				Replace the for loop with that.
+
+			*/
+
 
 			console.log('fired pokecollection from pagniation buttons');
 			
@@ -122,7 +130,8 @@ class Home extends Component {
 		var self = this;
 		this.setState({
 			currentPage: event,
-			currentBase: (event - 1)  * this.state.pkmnPerPage
+			currentBase: (event - 1)  * this.state.pkmnPerPage,
+			currentShownPKMN: []
 		});
 
 
@@ -146,7 +155,7 @@ class Home extends Component {
 	}
 	
 	render(){
-		var stuff = this.state.pkmnlist;
+	
 		var self = this;
 		var currentPKMN = this.state.currentBase%this.state.totalPKMN;		
 

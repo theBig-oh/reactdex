@@ -39,8 +39,27 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 		border: 1px solid black;
 position: relative;
 z-index: 3;
+			
 
+			.pagination {
+				border:13px solid black;
+				background:black;
+
+				li {
+					border:1px solid black;
+					a {
+					background:black;
+					border:1px solid none;
+					color:white;
+				} 
+
+			}
+
+		}
 	}
 
+
 }
+
+
 
