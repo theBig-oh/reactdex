@@ -90,10 +90,10 @@ class Home extends Component {
 		
 	}
 	pokeCollect(startPKMN){
-			var self = this;
-			var stuff = this.state.pkmnlist;
 			
-			var collect = self.state.currentShownPKMN;
+			var allpkmn = this.state.pkmnlist;
+			
+			var collect = this.state.currentShownPKMN;
 			var collectDiv = [];
 
 			this.setState({
@@ -104,15 +104,13 @@ class Home extends Component {
 
 
 			for(var i = startPKMN; i < startPKMN + this.state.pkmnPerPage; i++){
-				if(stuff[i] == null){
+				if(allpkmn[i] == null){
 					console.log('Intial Value was Null, retrying...');
 				} else {
-					collect.push(this.state.pkmnlist[i]);
+					collect.push(allpkmn[i]);
 				}
 			}
-			var base = this.state.currentBase;
-
-			base = startPKMN;
+			
 
 
 			console.log('fired pokecollection from pagniation buttons');
