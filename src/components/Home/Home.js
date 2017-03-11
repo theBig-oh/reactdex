@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { Pagination } from 'react-bootstrap';
 import './Home.scss';
 
 function Pokemon(props){
 	return (
-			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>{props.pokemon.name}</div>
+			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>
+					<div id='' className='poke-name col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						{props.pokemon.name}
+					</div>
+
+
+			</div>
 
 
 		)
@@ -19,19 +26,25 @@ function Pokemon(props){
 
 }
 */
+
+
 class Home extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			pkmnlist: [],
 			totalPKMN: [],
-			currentPage: 0,
-			pkmnPerPage: 9,
+			currentPage: 1,
+			pkmnPerPage: 12,
 			currentShownPKMN: [],
 			currentBase: 0
 			
 		} 
 		console.log(this.state);
+
+		this.pokeCollect = this.pokeCollect.bind(this);
+		this.setBasePKMN = this.setBasePKMN.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		
 	}
 	componentWillReceiveProps(nextProps) {
@@ -79,14 +92,20 @@ class Home extends Component {
 	pokeCollect(startPKMN){
 			var self = this;
 			var stuff = this.state.pkmnlist;
-
+			
 			var collect = self.state.currentShownPKMN;
 			var collectDiv = [];
-			for(var i = startPKMN; i < startPKMN + 9; i++){
+
+			
+
+			
+
+
+			for(var i = startPKMN; i < startPKMN + this.state.pkmnPerPage; i++){
 				if(stuff[i] == null){
 					console.log('Intial Value was Null, retrying...');
 				} else {
-					collect.push(stuff[i]);
+					collectDiv.push(this.state.pkmnlist[i]);
 				}
 			}
 			var base = this.state.currentBase;
@@ -94,24 +113,52 @@ class Home extends Component {
 			base = startPKMN;
 
 
+			console.log('fired pokecollection from pagniation buttons');
 			
 
 
 	}
+	handleClick(event){
+		var self = this;
+		this.setState({
+			currentPage: event,
+			currentBase: (event - 1)  * this.state.pkmnPerPage
+		});
+
+
+		console.log('firing off pagniation for page ' + event);
+		
+	}
+	setBasePKMN(startNum){
+		var self = this;
+		if(startNum > this.state.totalPKMN){
+			var num = startNum%this.state.totalPKMN;
+
+			self.setState({
+			currentBase: num
+			})
+		} else {
+			self.setState({
+				currentBase: startNum
+			})
+
+		}
+	}
+	
 	render(){
 		var stuff = this.state.pkmnlist;
 		var self = this;
-		var currentPKMN = 9;		
+		var currentPKMN = this.state.currentBase%this.state.totalPKMN;		
+
+
+
+		this.pokeCollect(this.state.currentBase);
 
 		
-		if(stuff){
-			this.pokeCollect(currentPKMN);
-		}
+	
 		
-
-
-
-
+		
+		
 		return (
 				<div id='Home'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					<div id='selection-window' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -132,8 +179,17 @@ class Home extends Component {
 						}
 
 					</div>
-					<div id='' className=''>
-						Prev | Next
+					<div id='selection-buttons' className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+
+					<Pagination 
+						activePage={this.state.currentPage}
+						onSelect={this.handleClick}
+						items={Math.floor(self.state.totalPKMN / self.state.pkmnPerPage)}
+						maxButtons={5}
+						next={true}
+						prev={true}
+
+					/>
 
 					</div>
 

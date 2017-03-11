@@ -1,7 +1,16 @@
+@font-face {
+
+	font-family:"Arcade";
+	src:url('../../assets/fonts/ARCADECLASSIC.TTF') format('truetype');
+}
+
+
+
+
 #Home {
 	
 	height:100%;
-
+	font-family:'Arcade';
 
 	#selection-window {
 		height:100%;
@@ -9,15 +18,29 @@
 		.pokemon-selection {
 		
 		height:20%;
-		background:rgba(87,116,225,0.8);
+		background:rgba(87,116,225,0.65);
 		margin-bottom:2%;
-
+		border:5px solid blue;
+		border-radius:5px;
 		margin-left:6%;
 
-		font-size:3em;
-		color:red;
+		font-size:4em;
+		color:black;
 
+
+		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+-moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+		
 		}
 	}
 
+	#selection-buttons {
+		border: 1px solid black;
+position: relative;
+z-index: 3;
+
+	}
+
 }
+
