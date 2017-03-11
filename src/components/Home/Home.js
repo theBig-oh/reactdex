@@ -96,7 +96,9 @@ class Home extends Component {
 			var collect = self.state.currentShownPKMN;
 			var collectDiv = [];
 
-			
+			this.setState({
+				currentShownPKMN: []
+			});
 
 			
 
@@ -105,7 +107,7 @@ class Home extends Component {
 				if(stuff[i] == null){
 					console.log('Intial Value was Null, retrying...');
 				} else {
-					collectDiv.push(this.state.pkmnlist[i]);
+					collect.push(this.state.pkmnlist[i]);
 				}
 			}
 			var base = this.state.currentBase;
