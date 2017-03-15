@@ -15,6 +15,10 @@
 	#selection-window {
 		height:100%;
 
+		a {
+			color:black;
+		}
+
 		.pokemon-selection {
 		
 		height:20%;
@@ -23,9 +27,14 @@
 		border:5px solid blue;
 		border-radius:5px;
 		margin-left:6%;
-
-		font-size:4em;
+		word-wrap:break-word;
+		font-size:3em;
 		color:black;
+
+
+		&:hover{
+			background:rgba(87,116,225,0.95);
+		}
 
 
 		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
@@ -36,22 +45,63 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 	}
 
 	#selection-buttons {
-		border: 1px solid black;
+	
 position: relative;
 z-index: 3;
-			
+			top:3%;
 
-			.pagination {
-				border:13px solid black;
-				background:black;
+			.poke-select {
+				
+				
+				display:inline-flex;
 
 				li {
-					border:1px solid black;
+					border: 1px solid white;
+					width: 25%;
+					text-align: center;
+					font-size: 3em;
+					list-style: none;
+					margin-left:5%;
+					background:rgba(111,120,127,0.8);
+					
+					-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+-moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+
 					a {
-					background:black;
-					border:1px solid none;
+					
+					
+					
 					color:white;
+					width:100%;
+					;
+					
 				} 
+				&:first-child {
+						a:after {
+							content: ' Prev';
+							width:100%;
+						}
+					}
+
+				&:last-child {
+						width:10vw;
+						a:before {
+							content: 'Next';
+							width:100%;
+						}
+					}
+				&:nth-child(2){
+					a:before{
+						content:'Page #';
+					}
+
+					a{
+						text-decoration: none;
+						cursor:default;
+					}
+
+				}
 
 			}
 

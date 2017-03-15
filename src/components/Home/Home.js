@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
 import './Home.scss';
-
+import { Link, Router} from 'react-router';
 function Pokemon(props){
+	console.log(props.pokemon);
+	console.log(props.pokemon[1]);
+	
+	const pokem = 'pkmn/:'+props.pokemon[1];
+
+
+
 	return (
 			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>
-					<div id='' className='poke-name col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-						{props.pokemon.name}
-					</div>
+					<Link   to={pokem}  id='' className='poke-name col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						<p className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>{props.pokemon[0].name}</p>
+					</Link>
 
 
 			</div>
@@ -68,24 +75,7 @@ class Home extends Component {
 			self.state.pkmnlist = self.props.pokemonList;
 			self.state.totalPKMN = self.props.pokemonList.length;			
 
-	/*		var pokeCollection = function(startPKMN){
-			var collect = [];
-			
-			for(var i = startPKMN;i< startPKMN + 9; i++){
-				collect.push(self.props.pokemonList[i]);
-			}
-			console.log(collect);
-			
-			self.state.currentShownPKMN = collect;
-
-
-			return collect;
-
-
-
-		};
-
-		pokeCollection(20);*/
+	
 
 		
 	}
@@ -96,14 +86,21 @@ class Home extends Component {
 			var collect = this.state.currentShownPKMN;
 			
 
-		
+			
+			/*
+				The initial pkmnlist comes up null when it loads up the first time.
+
+				This loops makes sure that the objects coming in aren't null,
+
+				then pushes it in the collect var.
+			*/
 
 
 			for(var i = startPKMN; i < startPKMN + this.state.pkmnPerPage; i++){
 				if(allpkmn[i] == null){
 					console.log('Intial Value was Null, retrying...');
 				} else {
-					collect.push(allpkmn[i]);
+					collect.push([allpkmn[i], i]);
 				}
 			}
 			
@@ -139,6 +136,13 @@ class Home extends Component {
 		
 	}
 	setBasePKMN(startNum){
+		
+		/*
+			Not being used. Will take out later.
+			
+		*/
+
+
 		var self = this;
 		if(startNum > this.state.totalPKMN){
 			var num = startNum%this.state.totalPKMN;
@@ -164,7 +168,7 @@ class Home extends Component {
 		this.pokeCollect(this.state.currentBase);
 
 		
-	
+		console.log(this.state.currentShownPKMN);
 		
 		
 		
@@ -190,13 +194,14 @@ class Home extends Component {
 					</div>
 					<div id='selection-buttons' className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
 
-					<Pagination 
+					<Pagination bsClass='poke-select col-xs-12 col-sm-12 col-md-12 col-lg-12'
 						activePage={this.state.currentPage}
 						onSelect={this.handleClick}
 						items={Math.floor(self.state.totalPKMN / self.state.pkmnPerPage)}
-						maxButtons={5}
+						maxButtons={1}
 						next={true}
 						prev={true}
+						ellipsis={false}
 
 					/>
 
