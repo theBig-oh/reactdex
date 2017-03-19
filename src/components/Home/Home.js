@@ -6,7 +6,7 @@ function Pokemon(props){
 	console.log(props.pokemon);
 	console.log(props.pokemon[1]);
 	
-	const pokem = 'pkmn/:'+props.pokemon[1];
+	const pokem = 'pkmn/:'+(props.pokemon[1] + 1);
 
 
 
@@ -33,6 +33,76 @@ function Pokemon(props){
 
 }
 */
+
+
+function getPKMN() {
+ 	return new Promise(function(resolve,reject){
+ 		if(localStorage){
+ 			if(localStorage.getItem('PKMNList')){
+ 				resolve(JSON.parse(localStorage.getItem('PKMNList')));
+
+ 				console.log('Pokemon Data Loaded from localStorage');
+ 			}
+ 			else {
+ 				var xhr = new XMLHttpRequest();
+ 				let list;
+ 				xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
+
+ 				xhr.onload = function(){
+ 					if(xhr.status >= 200 && xhr.status < 400){
+ 						list = xhr.response;
+ 						localStorage.setItem('PKMNList',list);
+ 						console.log('localStorage is active, and PKMN List is saved');
+ 				
+ 						resolve(JSON.parse(list));
+
+
+
+ 						} else {
+ 							xhr.error();
+ 						}
+ 					}
+
+ 				xhr.error = function(){
+ 					console.log('failed at getting pokemon list');
+ 					reject(xhr.responseText);
+ 			
+ 				};
+
+ 				xhr.send();
+ 			}
+ 		} else {
+ 			var xhr = new XMLHttpRequest();
+ 		let list;
+ 		xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
+
+ 		xhr.onload = function(){
+ 			if(xhr.status >= 200 && xhr.status < 400){
+ 				list = xhr.response;
+ 				
+ 				console.log('No localStorage, got PKMN List');
+ 				
+ 				resolve(JSON.parse(list));
+
+
+
+ 			} else {
+ 				xhr.error();
+ 			}
+ 		}
+
+ 		xhr.error = function(){
+ 			console.log('failed getting pokemon data');
+ 			reject(null);
+ 			
+ 		};
+
+ 		xhr.send();
+ 		}
+ 	})
+ };
+
+
 
 
 class Home extends Component {
@@ -166,11 +236,13 @@ class Home extends Component {
 
 
 		this.pokeCollect(this.state.currentBase);
-
+		console.log(this.props);
 		
-		console.log(this.state.currentShownPKMN);
+		console.log(this.props.children);
 		
+		var currentPKMN = this.state.currentShownPKMN;
 		
+		console.log(currentPKMN);
 		
 		return (
 				<div id='Home'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -184,7 +256,8 @@ class Home extends Component {
 								the second takes the index value.
 							*/
 
-							this.state.currentShownPKMN.map(function(pkmn, id){
+
+							currentPKMN.map(function(pkmn, id){
 								return <Pokemon key={id} pokemon={pkmn} />
 
 							})

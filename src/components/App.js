@@ -256,7 +256,18 @@ setStatePKMN() {
  }
 
   render() {
-  	
+  	if(this.props.location.pathname == '/'){
+  		var currentPKMN = <Home pokemonList={this.state.data} maxPKMN={this.state.maxPKMN}/>
+
+  		console.log('ayy currentpkmn is home');
+
+  		
+  	} else {
+  		var currentPKMN = this.props.children;
+  	}
+
+
+
     return (
      <div id='app'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 pokemon-large'>
      	<div ref='gridcanvas'id='grid-background'className="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
@@ -265,7 +276,7 @@ setStatePKMN() {
      	
 
      	<div id='body'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-     	<Home pokemonList={this.state.data} maxPKMN={this.state.maxPKMN}/>
+     		 {currentPKMN}
      
 
      	</div>
@@ -288,3 +299,6 @@ setStatePKMN() {
 }
 
 export default App;
+
+
+/*<Home pokemonList={this.state.data} maxPKMN={this.state.maxPKMN}/>*/

@@ -11,15 +11,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css'; 
 
 ReactDOM.render(
-  (<Router history={hashHistory}>
-  		<Route path = "/" component={App}>
+  (<Router history={browserHistory}>
+  		<Route component = {App}>
   			<Route path='/' component = {Home} />
-  			<Route path='pkmn/{:pkmnid}'  component={Pokefacts} />
-  		
+  			<Route path='/pkmn/:pkmnId' component = {Pokefacts} />
+  	
 
   		</Route>
   		
-
+  		
 
 
   </Router>),
