@@ -59,8 +59,8 @@ class Pokefact extends Component {
 		super()
 
 		this.state = {
-			pokemonStats: null,
-			pokemonDex: null,
+			pokemonStats: [],
+			pokemonDex: [],
 
 		}
 
@@ -69,32 +69,42 @@ class Pokefact extends Component {
 
 	setPokeFacts(){
 		var pokemonid = this.props.params.pkmnId;
+		console.log(pokemonid);
 		var self = this;
-		getData(pokemonid,true).success(function(data){
+		getData(pokemonid,true).then(function(data){
 			var result = self.state.pokemonStats;
 
-			for(var i=0;i < data.length;i++){
+			/*for(var i=0;i < data.length;i++){
 				result.push(data);
 			}
 
 			self.setState({
 				pokemonStats: result
-			});
-		});
+			});*/
 
-		getData(pokemonid,false).success(function(data){
-			var result = self.state.pokemonStats;
-
-			for(var i=0;i < data.length;i++){
-				result.push(data);
-			}
+			console.log(data);
 
 			self.setState({
-				pokemonStats: result
+				pokemonStats: data
+			});
+
+
+
+		});
+
+		getData(pokemonid,false).then(function(data){
+			var result = self.state.pokemonStats;
+
+			
+			self.setState({
+				pokemonDex: data
 			});
 		});
 
 
+	}
+	componentWillMount() {
+		this.setPokeFacts();
 	}
 
 	render(){

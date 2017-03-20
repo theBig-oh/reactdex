@@ -6,7 +6,7 @@ function Pokemon(props){
 	console.log(props.pokemon);
 	console.log(props.pokemon[1]);
 	
-	const pokem = 'pkmn/:'+(props.pokemon[1] + 1);
+	const pokem = 'pkmn/'+(props.pokemon[1] + 1);
 
 
 
