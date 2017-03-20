@@ -1,3 +1,26 @@
 .poke-facts {
-	background:black;
+	
+	height:100%;
+
+	.pokemon-fact-display {
+
+		border:1px solid white;
+		height:100%;
+		border-radius:5px;
+		background:rgba(102,122,127,0.8);
+
+	}
+
+	#pokemon-display-left {
+
+		#pokemon-image {
+			border:1px solid black;
+			height:50%;
+		}
+
+	}
+
+	#pokemon-display-right {
+		float:right;
+	}
 }

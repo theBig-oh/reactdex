@@ -109,12 +109,35 @@ class Pokefact extends Component {
 
 	render(){
 
-		console.log(this.props.params);
-		console.log('this is being called from pokefacts component');
+		var pokeStats = this.state.pokemonStats;
+
+
+
+	
 
 		return (
 				<div id='pokefact'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 poke-facts'>
-					Stuff
+					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-5 col-lg-5'>
+						<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-5 col-lg-5'>
+							Place holder
+
+						</div>
+						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-5 col-lg-5'>
+							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									{pokeStats.name}
+							</div>
+
+
+						</div>
+
+					</div>
+
+					<div id='pokemon-display-right' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-5 col-lg-5'>
+
+
+					</div>
+
+
 
 				</div>
 
