@@ -61,6 +61,7 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: [],
 			pokemonDex: [],
+			pokemonTypes: []
 
 		}
 
@@ -72,7 +73,7 @@ class Pokefact extends Component {
 		console.log(pokemonid);
 		var self = this;
 		getData(pokemonid,true).then(function(data){
-			var result = self.state.pokemonStats;
+			
 
 			/*for(var i=0;i < data.length;i++){
 				result.push(data);
@@ -82,10 +83,13 @@ class Pokefact extends Component {
 				pokemonStats: result
 			});*/
 
+
+
 			console.log(data);
 
 			self.setState({
-				pokemonStats: data
+				pokemonStats: data,
+				pokemonType: [data.types[0].type.name,data.types[1].type.name]
 			});
 
 
@@ -93,7 +97,7 @@ class Pokefact extends Component {
 		});
 
 		getData(pokemonid,false).then(function(data){
-			var result = self.state.pokemonStats;
+			
 
 			
 			self.setState({
@@ -111,15 +115,22 @@ class Pokefact extends Component {
 
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
-		console.log(JSON.stringify(pokeDex));
+		var pokeTypes = this.state.pokemonType;
+
+		var pokemonImage = {
+			background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
+			backgroundSize:'100%,100%',
+		
+		backgroundPosition:'center',
+		}
 
 	
 
 		return (
 				<div id='pokefact'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 poke-facts'>
 					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-5 col-lg-5'>
-						<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-5 col-lg-5'>
-							Place holder
+						<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-5 col-lg-5' style={pokemonImage}>
+						
 
 						</div>
 						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-7 col-lg-7'>
@@ -127,7 +138,10 @@ class Pokefact extends Component {
 									<span id='poke-name'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
 									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
 							</div>
+							<div id='pokemon-type' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									
 
+							</div>
 
 						</div>
 

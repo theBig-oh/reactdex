@@ -17,12 +17,18 @@
 		border-radius:5px;
 		background:rgba(102,122,127,0.8);
 
+
+		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+-moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+		
+
 	}
 
 	#pokemon-display-left {
 
 		#pokemon-image {
-			border:1px solid black;
+			
 			height:50%;
 		}
 
