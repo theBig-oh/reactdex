@@ -110,8 +110,8 @@ class Pokefact extends Component {
 	render(){
 
 		var pokeStats = this.state.pokemonStats;
-
-
+		var pokeDex = this.state.pokemonDex;
+		console.log(JSON.stringify(pokeDex));
 
 	
 
@@ -122,9 +122,10 @@ class Pokefact extends Component {
 							Place holder
 
 						</div>
-						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-5 col-lg-5'>
+						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-7 col-lg-7'>
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									{pokeStats.name}
+									<span id='poke-name'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
+									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
 							</div>
 
 

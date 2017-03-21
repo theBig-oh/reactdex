@@ -1,5 +1,13 @@
+@font-face {
+
+	font-family:"Arcade";
+	src:url('../../assets/fonts/ARCADECLASSIC.TTF') format('truetype');
+}
+
+
+
 .poke-facts {
-	
+	font-family:'Arcade';	
 	height:100%;
 
 	.pokemon-fact-display {
@@ -16,6 +24,19 @@
 		#pokemon-image {
 			border:1px solid black;
 			height:50%;
+		}
+
+		#pokemon-name {
+			border-bottom:3px solid black;
+			#poke-name {
+				font-size:2.5em;
+				text-align:left;
+
+			}
+			#poke-id {
+				font-size:3em;
+				text-align:right;
+			}
 		}
 
 	}

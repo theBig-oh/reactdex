@@ -2,18 +2,41 @@ import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
 import './Home.scss';
 import { Link, Router} from 'react-router';
+
+/*var imagehttp = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png';
+*/
+
+/*
+
+	Base desktop layout completed, still have to do mobile version along with resizing fixes.
+
+*/
+
+
+
+
+
 function Pokemon(props){
 	console.log(props.pokemon);
 	console.log(props.pokemon[1]);
-	
+	const pkid = props.pokemon[1]+1;
 	const pokem = 'pkmn/'+(props.pokemon[1] + 1);
 
-
+	var style = {
+		background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png)no-repeat',
+		backgroundSize:'110%,160%',
+		height:'15vh',
+		backgroundPosition:'center',
+		
+	}
+	
 
 	return (
 			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>
 					<Link   to={pokem}  id='' className='poke-name col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-						<p className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>{props.pokemon[0].name}</p>
+						<p className='col-xs-12 col-sm-12 col-md-9 col-lg-9'>{props.pokemon[0].name}</p>
+
+						<div id=''className='col-xs-12 col-sm-12 col-md-3 col-lg-3'style={style}></div>
 					</Link>
 
 
@@ -22,86 +45,6 @@ function Pokemon(props){
 
 		)
 }
-
-/*class SelectionWindow extends Component {
-	getDefaultProps(props){
-		this.props = {
-
-		}
-	}
-
-
-}
-*/
-
-
-function getPKMN() {
- 	return new Promise(function(resolve,reject){
- 		if(localStorage){
- 			if(localStorage.getItem('PKMNList')){
- 				resolve(JSON.parse(localStorage.getItem('PKMNList')));
-
- 				console.log('Pokemon Data Loaded from localStorage');
- 			}
- 			else {
- 				var xhr = new XMLHttpRequest();
- 				let list;
- 				xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
-
- 				xhr.onload = function(){
- 					if(xhr.status >= 200 && xhr.status < 400){
- 						list = xhr.response;
- 						localStorage.setItem('PKMNList',list);
- 						console.log('localStorage is active, and PKMN List is saved');
- 				
- 						resolve(JSON.parse(list));
-
-
-
- 						} else {
- 							xhr.error();
- 						}
- 					}
-
- 				xhr.error = function(){
- 					console.log('failed at getting pokemon list');
- 					reject(xhr.responseText);
- 			
- 				};
-
- 				xhr.send();
- 			}
- 		} else {
- 			var xhr = new XMLHttpRequest();
- 		let list;
- 		xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
-
- 		xhr.onload = function(){
- 			if(xhr.status >= 200 && xhr.status < 400){
- 				list = xhr.response;
- 				
- 				console.log('No localStorage, got PKMN List');
- 				
- 				resolve(JSON.parse(list));
-
-
-
- 			} else {
- 				xhr.error();
- 			}
- 		}
-
- 		xhr.error = function(){
- 			console.log('failed getting pokemon data');
- 			reject(null);
- 			
- 		};
-
- 		xhr.send();
- 		}
- 	})
- };
-
 
 
 
@@ -114,7 +57,9 @@ class Home extends Component {
 			currentPage: 1,
 			pkmnPerPage: 12,
 			currentShownPKMN: [],
-			currentBase: 0
+			currentBase: 0,
+			pkmnImages: []
+
 			
 		} 
 		console.log(this.state);
@@ -155,7 +100,7 @@ class Home extends Component {
 			
 			var collect = this.state.currentShownPKMN;
 			
-
+			var self = this;
 			
 			/*
 				The initial pkmnlist comes up null when it loads up the first time.
@@ -171,6 +116,8 @@ class Home extends Component {
 					console.log('Intial Value was Null, retrying...');
 				} else {
 					collect.push([allpkmn[i], i]);
+					
+
 				}
 			}
 			
@@ -193,6 +140,7 @@ class Home extends Component {
 
 
 	}
+	
 	handleClick(event){
 		var self = this;
 		this.setState({
@@ -233,7 +181,7 @@ class Home extends Component {
 		var self = this;
 		var currentPKMN = this.state.currentBase%this.state.totalPKMN;		
 
-
+	
 
 		this.pokeCollect(this.state.currentBase);
 		console.log(this.props);
