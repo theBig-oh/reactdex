@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
 import './Pokefact.scss';
 import { Link, Router} from 'react-router';
-
+import StatDisplay from '../StatDisplay/StatDisplay';
 /*
 	
 	Data either gets the "Actual Pokemon" data if typed is true (Actual stats)
@@ -31,8 +31,8 @@ function getData(id, typed){
 
 		xhr.onload = function(){
 			if(xhr.status == 200){
-				result = xhr.response;
-				resolve(JSON.parse(result));
+				result = JSON.parse(xhr.response);
+				resolve(result);
 
 			} else {
 				xhr.error();
@@ -53,6 +53,25 @@ function getData(id, typed){
 }
 
 
+/*
+	Next, must do a component that will take the state data from Pokefact. 
+
+
+	Left Side
+	
+	- Pokemon Image
+	- Pokemon Name
+	- Pokemon Dex Entry number
+	- Pokemon Type
+
+
+
+
+	Right Side
+
+*/
+
+
 
 class Pokefact extends Component {
 	constructor(){
@@ -61,7 +80,7 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: [],
 			pokemonDex: [],
-			pokemonTypes: []
+			pokemonTypes: ['loading','loading']
 
 		}
 
@@ -89,7 +108,7 @@ class Pokefact extends Component {
 
 			self.setState({
 				pokemonStats: data,
-				pokemonType: [data.types[0].type.name,data.types[1].type.name]
+				
 			});
 
 
@@ -107,11 +126,52 @@ class Pokefact extends Component {
 
 
 	}
-	componentWillMount() {
+	componentDidMount() {
 		this.setPokeFacts();
 	}
 
 	render(){
+
+		/*
+			3/21 7:22pm - Something is happening in the this.state.pokeTypes that is not letting me render it.
+
+						  There's 2 explainations, first... I have no clue what is going on
+
+						  Second - The data still hasn't arrived and been stored in this.state by the 
+
+						  XMLHttpRequest. So what's happening is when this intially renders, it breaks because
+
+						  this.state.pokemonType/Stats/Dex is empty hence the null value. 
+
+
+
+
+		*/
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
@@ -119,7 +179,7 @@ class Pokefact extends Component {
 
 		var pokemonImage = {
 			background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
-			backgroundSize:'100%,100%',
+			backgroundSize:'68%',
 		
 		backgroundPosition:'center',
 		}
@@ -128,29 +188,28 @@ class Pokefact extends Component {
 
 		return (
 				<div id='pokefact'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 poke-facts'>
-					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-5 col-lg-5'>
-						<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-5 col-lg-5' style={pokemonImage}>
-						
+					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+						<div id='pokemon-image-wrapper' className='col-xs-12 col-sm-12 col-md-3 col-lg-3'>
+							<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-12 col-lg-12' style={pokemonImage}>
+							
 
 						</div>
-						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-7 col-lg-7'>
+
+						</div>
+						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-9 col-lg-9'>
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									<span id='poke-name'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
 									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
 							</div>
-							<div id='pokemon-type' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									
-
-							</div>
+							
+							
+								
 
 						</div>
 
 					</div>
 
-					<div id='pokemon-display-right' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-5 col-lg-5'>
-
-
-					</div>
+			
 
 
 

@@ -12,9 +12,9 @@
 
 	.pokemon-fact-display {
 
-		border:1px solid white;
+		
 		height:100%;
-		border-radius:5px;
+		border-radius:15px;
 		background:rgba(102,122,127,0.8);
 
 
@@ -27,15 +27,19 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 
 	#pokemon-display-left {
 
-		#pokemon-image {
-			
+		#pokemon-image-wrapper{
 			height:50%;
+			padding:1%;
+			#pokemon-image {
+			
+			height:80%;
+			}
 		}
 
 		#pokemon-name {
 			border-bottom:3px solid black;
 			#poke-name {
-				font-size:2.5em;
+				font-size:4em;
 				text-align:left;
 
 			}
