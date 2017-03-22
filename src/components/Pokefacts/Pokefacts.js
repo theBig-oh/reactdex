@@ -133,7 +133,7 @@ class Pokefact extends Component {
 	render(){
 
 		/*
-			3/21 7:22pm - Something is happening in the this.state.pokeTypes that is not letting me render it.
+			- Something is happening in the this.state.pokeTypes that is not letting me render it.
 
 						  There's 2 explainations, first... I have no clue what is going on
 
@@ -144,38 +144,15 @@ class Pokefact extends Component {
 						  this.state.pokemonType/Stats/Dex is empty hence the null value. 
 
 
-
+						
 
 		*/
 
 
 
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
-		var pokeTypes = this.state.pokemonType;
+		var pokeTypes = this.state.pokemonType; // This loads if its called normally, if I call it using pokeTypes[index] it crashes...
 
 		var pokemonImage = {
 			background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
