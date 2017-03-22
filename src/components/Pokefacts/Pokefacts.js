@@ -78,8 +78,8 @@ class Pokefact extends Component {
 		super()
 
 		this.state = {
-			pokemonStats: [],
-			pokemonDex: [],
+			pokemonStats: null,
+			pokemonDex: null,
 			pokemonTypes: ['loading','loading']
 
 		}
@@ -92,23 +92,12 @@ class Pokefact extends Component {
 		console.log(pokemonid);
 		var self = this;
 		getData(pokemonid,true).then(function(data){
-			
-
-			/*for(var i=0;i < data.length;i++){
-				result.push(data);
-			}
-
-			self.setState({
-				pokemonStats: result
-			});*/
-
-
 
 			console.log(data);
 
 			self.setState({
 				pokemonStats: data,
-				
+				pokemonTypes:[data.types[0].type.name,data.types[1].type.name]
 			});
 
 
@@ -116,11 +105,10 @@ class Pokefact extends Component {
 		});
 
 		getData(pokemonid,false).then(function(data){
-			
-
-			
+						
 			self.setState({
 				pokemonDex: data
+
 			});
 		});
 
@@ -132,38 +120,38 @@ class Pokefact extends Component {
 
 	render(){
 
-		/*
-			- Something is happening in the this.state.pokeTypes that is not letting me render it.
-
-						  There's 2 explainations, first... I have no clue what is going on
-
-						  Second - The data still hasn't arrived and been stored in this.state by the 
-
-						  XMLHttpRequest. So what's happening is when this intially renders, it breaks because
-
-						  this.state.pokemonType/Stats/Dex is empty hence the null value. 
-
-
-						
-
-		*/
-
-
 
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
-		var pokeTypes = this.state.pokemonType; // This loads if its called normally, if I call it using pokeTypes[index] it crashes...
-
-		var pokemonImage = {
-			background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
-			backgroundSize:'68%',
+		var poketype;
 		
-		backgroundPosition:'center',
-		}
+		var self = this;
 
-	
+		/*
+			Working on loading screen later.
+		*/
 
-		return (
+		if(!pokeStats && !pokeDex){
+			/*
+				Loading screen
+			*/
+			return <span>Loading...</span>
+
+		} else {
+
+		 	poketype = this.state.pokemonTypes;
+
+			var pokemonImage = {
+					background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
+					backgroundSize:'68%',
+		
+					backgroundPosition:'center',
+				}
+
+				console.log(pokeStats);
+
+
+				return (
 				<div id='pokefact'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 poke-facts'>
 					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
 						<div id='pokemon-image-wrapper' className='col-xs-12 col-sm-12 col-md-3 col-lg-3'>
@@ -177,6 +165,17 @@ class Pokefact extends Component {
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									<span id='poke-name'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
 									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
+							</div>
+							
+							<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+								<div id=''className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+								{poketype[1]}  {poketype[0]}
+
+								
+
+								</div>
+
+
 							</div>
 							
 							
@@ -193,6 +192,17 @@ class Pokefact extends Component {
 				</div>
 
 			)
+		}
+
+
+
+
+
+		
+
+	
+
+	
 	}
 
 
