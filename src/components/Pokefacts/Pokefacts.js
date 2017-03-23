@@ -80,7 +80,7 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: null,
 			pokemonDex: null,
-			pokemonTypes: ['loading','loading']
+			
 
 		}
 
@@ -97,7 +97,7 @@ class Pokefact extends Component {
 
 			self.setState({
 				pokemonStats: data,
-				pokemonTypes:[data.types[0].type.name,data.types[1].type.name]
+				
 			});
 
 
@@ -131,11 +131,21 @@ class Pokefact extends Component {
 			Working on loading screen later.
 		*/
 
-		if(!pokeStats && !pokeDex){
+		if(!pokeStats || !pokeDex){
 			/*
 				Loading screen
 			*/
-			return <span>Loading...</span>
+			return (
+					<div id='loading-screen'className='col-xs-12 col-sm-12 col-md-5 col-lg-5'> 
+						
+						<div id='loading-text'className='col-xs-12 col-sm-12 col-md-10 col-lg-10'>
+							Loading...
+
+						</div>
+
+					</div>
+
+				)
 
 		} else {
 
@@ -169,7 +179,7 @@ class Pokefact extends Component {
 							
 							<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 								<div id=''className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-								{poketype[1]}  {poketype[0]}
+									<StatDisplay pokemonstat = {pokeStats}/>
 
 								
 
