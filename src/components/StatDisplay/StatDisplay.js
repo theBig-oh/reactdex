@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
-import './StatDisplay.scss';
+import './StatDisplay.css';
 import { Link, Router} from 'react-router';
 
 

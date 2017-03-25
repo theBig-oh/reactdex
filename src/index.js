@@ -6,7 +6,7 @@ import Home from './components/Home/Home';
 import Pokefacts from './components/Pokefacts/Pokefacts';
 
 
-import './index.scss';
+import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css'; 

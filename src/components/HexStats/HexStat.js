@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
-import './HexStat.scss';
+import './HexStat.css';
 
 
 class HexStat extends Component {

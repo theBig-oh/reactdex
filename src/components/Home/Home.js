@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
-import './Home.scss';
+import './Home.css';
 import { Link, Router} from 'react-router';
 
 /*var imagehttp = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png';

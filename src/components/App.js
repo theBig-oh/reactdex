@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
-import './App.scss';
+import './App.css';
 
 import Home from './Home/Home.js';
 
 function GridBlocks() {
 	this.fps = 60;
 	this.canvas = null;
-	this.width = 0;
-	this.height = 0;
+	this.width = 10;
+	this.height = 10;
 	this.minSpeed = this.fps/2;
 	this.maxSpeed = this.fps - 2;
-	this.blocks = 600;
+	this.blocks = 300;
 	this.interId = 0;
 }
 function makeBlock(x,y,size,velocity,direction,angle){

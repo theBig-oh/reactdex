@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
-import './Pokefact.scss';
+import './Pokefact.css';
 import { Link, Router} from 'react-router';
 import StatDisplay from '../StatDisplay/StatDisplay';
 /*

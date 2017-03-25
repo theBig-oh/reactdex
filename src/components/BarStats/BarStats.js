@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
-import './BarStats.scss';
+import './BarStats.css';
 
 
 class BarStats extends Component {
