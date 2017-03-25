@@ -38,7 +38,8 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 			}
 		}
 
-		#pokemon-name {
+		#pokemon-base-facts {
+			#pokemon-name {
 			border-bottom:3px solid #333;
 			#poke-name {
 				font-size:4em;
@@ -48,6 +49,15 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 			#poke-id {
 				font-size:3em;
 				text-align:right;
+				}
+			}
+
+			#info-window-wrapper {
+				padding:0;
+
+				#info-window{
+					padding:0;
+				}
 			}
 		}
 

@@ -22,6 +22,12 @@ function Pokemon(props){
 	const pkid = props.pokemon[1]+1;
 	const pokem = 'pkmn/'+(props.pokemon[1] + 1);
 
+	/*
+		The style below retrieves the sprites from the pokeAPI github, thankfully they're all under 1kb.
+
+	*/
+
+
 	var style = {
 		background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png)no-repeat',
 		backgroundSize:'110%,160%',

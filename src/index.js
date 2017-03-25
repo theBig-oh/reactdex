@@ -5,6 +5,7 @@ import App from './components/App';
 import Home from './components/Home/Home';
 import Pokefacts from './components/Pokefacts/Pokefacts';
 
+
 import './index.scss';
 
 import 'bootstrap/dist/css/bootstrap.css';

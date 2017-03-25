@@ -1,13 +1,18 @@
 #stat-display {
-	border:1px solid white;
-	height:50vh;
+	
+	height:50.5vh;
 	margin-top:1%;
 	padding:0;
+	float:right;
+
+	background:rgba(191,187,65,0.4);
+
 	#stat-title {
 		font-size:2em;
 	}
 
-	#type-wrapper {
+	#left-side {
+		#type-wrapper {
 		#type-header{
 			font-size:1.5em;
 			border-bottom:3px solid #333;
@@ -15,6 +20,108 @@
 		.types {
 			font-size:1.2em;
 			color:#eee;
+		}
+	}
+
+	#ability-wrapper {
+		#ability-header{
+			font-size:1.5em;
+			border-bottom:3px solid #333;
+		}
+		.ability {
+			font-size:1.2em;
+			color:#eee;
+			text-align:right;
+			padding:0;
+			.slot-titles{
+			
+				text-align:left;
+				
+			}
+
+		}
+
+
+
+		#slot1 {
+			background:#FF9A25;
+		}
+		#slot2 {
+			background:#7F4D13;
+		}
+		#hidden-ability {
+			background:#402609;
+		}
+
+	}
+
+	#weight-wrapper {
+		
+		#weight-title {
+			font-size:1.5em;
+			border-bottom:2px solid #333;
+		}
+		#weight {
+			padding:0;
+		}
+		.weights {
+			padding:0;
+			font-size:1.2em;
+			background:#737F7A;
+
+			.weight-title {
+				text-align:left;
+			}
+			.weight-value {
+				text-align:right;
+			}
+		}
+	}
+	#height-wrapper {
+		#height-title {
+			font-size:1.5em;
+			border-bottom:2px solid #333;
+		}
+		#height {
+			padding:0;
+			background:#eee;
+		}
+
+		.heights {
+			padding:0;
+			font-size:1.3em;
+
+
+		}
+
+		.height-value {
+			text-align:right;
+		}
+		}
+	}
+
+	#right-side {
+
+		#base-stats-wrapper {
+			#base-stat-title {
+				font-size:1.5em;
+				border-bottom:2px solid #333;
+			}
+			.stats {
+				height:5vh;
+
+				.stat-names {
+					font-size:1.3em;
+				}
+				.stat-values {
+					height:50%;
+
+					#actual-value {
+						height:100%;
+					}
+				}
+			}
+
 		}
 	}
 }

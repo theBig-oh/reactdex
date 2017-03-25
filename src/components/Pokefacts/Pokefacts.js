@@ -177,8 +177,8 @@ class Pokefact extends Component {
 									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
 							</div>
 							
-							<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-								<div id=''className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+								<div id='info-window'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									<StatDisplay pokemonstat = {pokeStats}/>
 
 								
