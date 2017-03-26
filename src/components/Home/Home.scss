@@ -6,8 +6,12 @@
 
 
 
+/* 
+	Phones
+ */
+@media screen and (min-width:320px){
 
-#Home {
+#Home { 
 	
 	height:100%;
 	font-family:'Arcade';
@@ -21,14 +25,182 @@
 
 		.pokemon-selection {
 		
-		height:20%;
+		height:8%;
 		background:rgba(87,116,225,0.65);
 		margin-bottom:2%;
 		border:5px solid blue;
 		border-radius:5px;
 		margin-left:6%;
 		word-wrap:break-word;
-		font-size:3em;
+		font-size:1em;
+		color:black;
+		padding:0;
+			.poke-name {
+				height:100%;
+				padding:0;
+				
+			}
+		&:hover{
+			background:rgba(87,116,225,0.95);
+		}
+
+
+		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+-moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+		
+		}
+	}
+
+	#selection-buttons {
+	
+position: relative;
+z-index: 3;
+			top:3%;
+
+			.poke-select {
+				
+				
+				display:inline-flex;
+
+				li {
+					border: 1px solid white;
+					width: 30%;
+					text-align: center;
+					font-size: 1em;
+					list-style: none;
+					margin-left:5%;
+					background:rgba(111,120,127,0.8);
+					
+					-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+-moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+
+					a {
+					
+					
+					
+					color:white;
+					width:100%;
+					;
+					
+				} 
+				&:first-child {
+						a:after {
+							content: ' Prev';
+							width:100%;
+						}
+					}
+
+				&:last-child {
+						width:15vw;
+						a:before {
+							content: 'Next';
+							width:100%;
+						}
+					}
+				&:nth-child(2){
+					a:before{
+						content:'Page #';
+					}
+
+					a{
+						text-decoration: none;
+						cursor:default;
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+
+}
+
+
+
+
+}
+
+/* 
+	Forgot which phone display this one was for
+ */
+ @media screen and (min-width:375px){
+
+
+
+
+
+}
+
+/* 
+	Tablets 
+ */
+
+
+@media screen and (min-width:768px){
+
+
+
+
+
+}
+
+/* 
+	MDPI laptop displays
+ */
+@media screen and (min-width:320px){
+
+
+
+
+
+}
+
+/* 
+	Most Mac displays
+ */
+
+ @media screen and (min-width:1440px){
+
+
+
+
+
+}
+
+/* 
+	Large displays
+ */
+
+@media screen and (min-width:1920px){
+
+
+
+#Home { 
+	
+	height:100%;
+	font-family:'Arcade';
+
+	#selection-window {
+		height:100%;
+
+		a {
+			color:black;
+		}
+
+		.pokemon-selection {
+		
+		height:9%;
+		background:rgba(87,116,225,0.65);
+		margin-bottom:2%;
+		border:5px solid blue;
+		border-radius:5px;
+		margin-left:6%;
+		word-wrap:break-word;
+		font-size:2em;
 		color:black;
 
 
@@ -111,5 +283,9 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 
 }
 
+
+
+
+}
 
 

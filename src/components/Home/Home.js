@@ -30,8 +30,17 @@ function Pokemon(props){
 
 	var style = {
 		background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png)no-repeat',
-		backgroundSize:'110%,160%',
-		height:'15vh',
+		backgroundSize:'100%',
+		height:'10vh',
+		
+		backgroundPosition:'center',
+		
+	}
+	var mobileStyle = {
+		background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+pkid+'.png)no-repeat 10px/100%',
+		
+		height:'6vh',
+		
 		backgroundPosition:'center',
 		
 	}
@@ -40,9 +49,10 @@ function Pokemon(props){
 	return (
 			<div id='' className='pokemon-selection col-xs-12 col-sm-12 col-md-3 col-lg-3'>
 					<Link   to={pokem}  id='' className='poke-name col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-						<p className='col-xs-12 col-sm-12 col-md-9 col-lg-9'>{props.pokemon[0].name}</p>
+						<p className='col-xs-9 col-sm-9 col-md-9 col-lg-9 pokemon-selection-name'>{props.pokemon[0].name}</p>
 
-						<div id=''className='col-xs-12 col-sm-12 col-md-3 col-lg-3'style={style}></div>
+						<div id=''className='hidden-xs hidden-sm col-md-3 col-lg-3 'style={style}></div>
+						<div id=''className='col-xs-3 col-sm-3 hidden-md hidden-lg 'style={mobileStyle}></div>
 					</Link>
 
 
@@ -61,9 +71,13 @@ class Home extends Component {
 			pkmnlist: [],
 			totalPKMN: [],
 			currentPage: 1,
+			mobilePage: 1,
 			pkmnPerPage: 12,
+			mobilePKMNPerPage: 6,
 			currentShownPKMN: [],
+			mobileShownPKMN: [],
 			currentBase: 0,
+			mobileBase: 0,
 			pkmnImages: []
 
 			
@@ -71,7 +85,7 @@ class Home extends Component {
 		console.log(this.state);
 
 		this.pokeCollect = this.pokeCollect.bind(this);
-		this.setBasePKMN = this.setBasePKMN.bind(this);
+		
 		this.handleClick = this.handleClick.bind(this);
 		
 	}
@@ -100,12 +114,12 @@ class Home extends Component {
 
 		
 	}
-	pokeCollect(startPKMN){
+	pokeCollect(deskStartPKMN,mobileStartPKMN){
 			
 			var allpkmn = this.state.pkmnlist;
 			
 			var collect = this.state.currentShownPKMN;
-			
+			var mobileCollect = this.state.mobileShownPKMN;
 			var self = this;
 			
 			/*
@@ -117,7 +131,7 @@ class Home extends Component {
 			*/
 
 
-			for(var i = startPKMN; i < startPKMN + this.state.pkmnPerPage; i++){
+			for(var i = deskStartPKMN; i < deskStartPKMN + this.state.pkmnPerPage; i++){
 				if(allpkmn[i] == null){
 					console.log('Intial Value was Null, retrying...');
 				} else {
@@ -126,7 +140,13 @@ class Home extends Component {
 
 				}
 			}
-			
+			for(var x=mobileStartPKMN; x < mobileStartPKMN + this.state.mobilePKMNPerPage; x++){
+				if(allpkmn[x] == null){
+					console.log('Mobile Initial Value was null, retrying...');
+				} else {
+					mobileCollect.push([allpkmn[x],x]);
+				}
+			}
 
 			/*
 				Notes for myself later:
@@ -151,56 +171,40 @@ class Home extends Component {
 		var self = this;
 		this.setState({
 			currentPage: event,
+			mobilePage: event,
 			currentBase: (event - 1)  * this.state.pkmnPerPage,
-			currentShownPKMN: []
+			mobileBase: (event -1) * this.state.mobilePKMNPerPage,
+			currentShownPKMN: [],
+			mobileShownPKMN: [],
 		});
 
 
 		console.log('firing off pagniation for page ' + event);
 		
 	}
-	setBasePKMN(startNum){
-		
-		/*
-			Not being used. Will take out later.
-			
-		*/
-
-
-		var self = this;
-		if(startNum > this.state.totalPKMN){
-			var num = startNum%this.state.totalPKMN;
-
-			self.setState({
-			currentBase: num
-			})
-		} else {
-			self.setState({
-				currentBase: startNum
-			})
-
-		}
-	}
+	
 	
 	render(){
 	
 		var self = this;
-		var currentPKMN = this.state.currentBase%this.state.totalPKMN;		
 
 	
 
-		this.pokeCollect(this.state.currentBase);
+		this.pokeCollect(this.state.currentBase,this.state.mobileBase);
+		
 		console.log(this.props);
 		
 		console.log(this.props.children);
-		
+		var mobilePKMN = this.state.mobileShownPKMN;
 		var currentPKMN = this.state.currentShownPKMN;
 		
-		console.log(currentPKMN);
+		console.log(mobilePKMN);
 		
 		return (
 				<div id='Home'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-					<div id='selection-window' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						<div id='desktop'className='hidden-sm hidden-xs col-md-12 col-lg-12'>
+					
+								<div id='selection-window' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 						{
 							/*
 								When trying to show multiple components with different values.
@@ -234,6 +238,46 @@ class Home extends Component {
 
 					</div>
 
+					
+						</div>
+					<div id='mobile'className='col-xs-12 col-sm-12 hidden-md hidden-lg'>
+					
+								<div id='selection-window' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						{
+							/*
+								When trying to show multiple components with different values.
+
+								Use array.prototype.map() function. First arguement takes the object,
+
+								the second takes the index value.
+							*/
+
+
+							mobilePKMN.map(function(pkmn, id){
+								return <Pokemon key={id} pokemon={pkmn} />
+
+							})
+
+						}
+
+					</div>
+					<div id='selection-buttons' className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+
+					<Pagination bsClass='poke-select col-xs-12 col-sm-12 col-md-12 col-lg-12'
+						activePage={this.state.currentPage}
+						onSelect={this.handleClick}
+						items={Math.floor(self.state.totalPKMN / self.state.pkmnPerPage)}
+						maxButtons={1}
+						next={true}
+						prev={true}
+						ellipsis={false}
+
+					/>
+
+					</div>
+
+					
+						</div>
 
 
 				</div>

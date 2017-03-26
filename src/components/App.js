@@ -5,14 +5,24 @@ import './App.css';
 
 import Home from './Home/Home.js';
 
-function GridBlocks() {
+
+/*
+	Need to optimize this, 
+
+	The amount of blocks is too high and can cause lag since Canvas objects itself 
+	is expensive in processing power.
+
+*/
+
+
+function GridBlocks(count) {
 	this.fps = 60;
 	this.canvas = null;
 	this.width = 10;
 	this.height = 10;
 	this.minSpeed = this.fps/2;
 	this.maxSpeed = this.fps - 2;
-	this.blocks = 300;
+	this.blocks = count;
 	this.interId = 0;
 }
 function makeBlock(x,y,size,velocity,direction,angle){
@@ -191,7 +201,6 @@ function getPKMN() {
 
 
 
-getPKMN();
 
 
 class App extends Component {
@@ -249,10 +258,14 @@ setStatePKMN() {
  }
  componentDidMount() {
  	let canvas = ReactDOM.findDOMNode(this.refs.gridcanvas);
-
- 	var gridfield = new GridBlocks();
+ 	let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);
+ 	var gridfield = new GridBlocks(500);
+ 	var mobilegrid = new GridBlocks(50);
  	gridfield.initialize(canvas);
  	gridfield.start();
+
+ 	mobilegrid.initialize(mobileCanvas);
+ 	mobilegrid.start();
  }
 
   render() {
@@ -270,9 +283,15 @@ setStatePKMN() {
 
     return (
      <div id='app'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 pokemon-large'>
-     	<div ref='gridcanvas'id='grid-background'className="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+     	<div ref='gridcanvas'id='grid-background'className="hidden-xs hidden-sm col-md-12 col-lg-12"></div>
+     	<div ref='mobilegridcanvas'id='grid-background'className="col-xs-12 col-sm-12 hidden-md hidden-lg"></div>
 
-     	<div id="top-banner" className="col-xs-12 col-sm-12 col-md-12 col-lg-12" > <div id="blue-jewel" className=''> </ div></div>
+     	<div id="top-banner" className="col-xs-12 col-sm-12 col-md-12 col-lg-12" > 
+     		<div id="blue-jewel" className=''> 
+
+     		</div>
+     			
+     	</div>
      	
 
      	<div id='body'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -282,10 +301,10 @@ setStatePKMN() {
      	</div>
 
      	<div id='bottom-banner'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-     		<div id='green-jewels-container'className='col-xs-12 col-sm-12 col-md-2 col-lg-2'>
-				<div id='green-jewel-one'className='col-xs-12 col-sm-12 col-md-3 col-lg-3 green-jewel'> </div>     			
-				<div id='green-jewel-two'className='col-xs-12 col-sm-12 col-md-3 col-lg-3 green-jewel'> </div>
-				<div id='green-jewel-three'className='col-xs-12 col-sm-12 col-md-3 col-lg-3 green-jewel'> </div>
+     		<div id='green-jewels-container'className='col-xs-4 col-sm-4 col-md-2 col-lg-2'>
+				<div id='green-jewel-one'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>     			
+				<div id='green-jewel-two'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>
+				<div id='green-jewel-three'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>
      		</div>
 
 
