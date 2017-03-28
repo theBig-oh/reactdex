@@ -19,11 +19,12 @@
     margin-bottom: 2%;
     border: 5px solid blue;
     border-radius: 5px;
-    margin-left: 6%;
+    margin-left: 0%;
     word-wrap: break-word;
     font-size: 1em;
     color: black;
     padding: 0;
+    margin-bottom: 5%;
     -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
     -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
     box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }

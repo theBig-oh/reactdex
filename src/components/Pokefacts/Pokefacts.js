@@ -12,7 +12,7 @@ import StatDisplay from '../StatDisplay/StatDisplay';
 	"Pokemon Species" data if false (This one has all the pokedex entries)
 	
 */
-
+ 
 
 function getData(id, typed){
 	return new Promise(function(resolve,reject){
@@ -160,21 +160,32 @@ class Pokefact extends Component {
 
 				console.log(pokeStats);
 
+					/*
+						To make my life easier, I'm going to have 2 options, a mobile display and a desktop display
 
+						
+						They're going to share the same classes but the only thing is I want to have the bootstrap classes 
+
+						different than the desktop without messing up the desktop version too much. 
+
+						...It's really for redundancy. 
+					*/
 				return (
 				<div id='pokefact'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 poke-facts'>
-					<div id='pokemon-display-left' className='pokemon-fact-display col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
-						<div id='pokemon-image-wrapper' className='col-xs-12 col-sm-12 col-md-3 col-lg-3'>
+
+
+					<div id='pokemon-display-left' className='pokemon-fact-display hidden-xs hidden-sm col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+						<div id='pokemon-image-wrapper' className='col-xs-3 col-sm-3 col-md-3 col-lg-3'>
 							<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-12 col-lg-12' style={pokemonImage}>
 							
 
 						</div>
 
 						</div>
-						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-9 col-lg-9'>
+						<div id='pokemon-base-facts' className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									<span id='poke-name'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
-									<span id='poke-id'className='col-xs-12 col-sm-12 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
+									<span id='poke-name'className='col-xs-8 col-sm-8 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
+									<span id='poke-id'className='col-xs-4 col-sm-4 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
 							</div>
 							
 							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -194,6 +205,38 @@ class Pokefact extends Component {
 						</div>
 
 					</div>
+					<div id='pokemon-display-left' className='pokemon-fact-display hidden-md hidden-lg col-xs-12 col-sm-12'>
+						<div id='pokemon-image-wrapper' className='col-xs-12 col-sm-12'>
+							<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-12 col-lg-12' style={pokemonImage}>
+							
+
+						</div>
+
+						</div>
+						<div id='pokemon-base-facts' className='col-xs-12 col-sm-12 col-md-9 col-lg-9'>
+							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									<span id='poke-name'className='col-xs-8 col-sm-8 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
+									<span id='poke-id'className='col-xs-4 col-sm-4 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
+							</div>
+							
+							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+								<div id='info-window'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									<StatDisplay pokemonstat = {pokeStats}/>
+
+								
+
+								</div>
+
+
+							</div>
+							
+							
+								
+
+						</div>
+
+					</div>
+
 
 			
 

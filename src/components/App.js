@@ -301,7 +301,7 @@ setStatePKMN() {
      	</div>
 
      	<div id='bottom-banner'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-     		<div id='green-jewels-container'className='col-xs-4 col-sm-4 col-md-2 col-lg-2'>
+     		<div id='green-jewels-container'className='col-xs-6 col-sm-6 col-md-2 col-lg-2'>
 				<div id='green-jewel-one'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>     			
 				<div id='green-jewel-two'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>
 				<div id='green-jewel-three'className='col-xs-3 col-sm-3 col-md-3 col-lg-3 green-jewel'> </div>

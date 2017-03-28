@@ -11,7 +11,7 @@ import { Link, Router} from 'react-router';
 	***Might make colorTypes into a global variable for later reasons
 
 
-
+ 
 */
 
 function TypeDisplay(typed){
@@ -367,12 +367,12 @@ class StatDisplay extends Component {
 					<div id='stat-display' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'> 
 
 						<div id='stat-title' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'> 
-							Basic Stats --
+							Basic Info --
 
 					 	</div>
 					 	<div id='left-side'className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
 					 			
-					 		<div id='type-wrapper' className='col-xs-12 col-sm-12 col-md-4 col-lg-4'> 
+					 		<div id='type-wrapper' className='col-xs-12 col-sm-6 col-md-4 col-lg-4'> 
 								<div id='type-header' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'> 
 									Types
 
@@ -380,7 +380,7 @@ class StatDisplay extends Component {
 					 			{TypeDisplay(pokestat.types)}
 
 					 		</div>
-					 		<div id='ability-wrapper' className='col-xs-12 col-sm-12 col-md-6 col-lg-6'> 
+					 		<div id='ability-wrapper' className='col-xs-12 col-sm-6 col-md-6 col-lg-6'> 
 								<div id='ability-header' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'> 
 									Abilities 
 
@@ -389,7 +389,7 @@ class StatDisplay extends Component {
 
 					 		</div>
 					 	
-					 		<div id='weight-wrapper'className='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+					 		<div id='weight-wrapper'className='col-xs-12 col-sm-6 col-md-4 col-lg-4'>
 					 			<div id='weight-title'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					 		
 					 				Weight:
@@ -399,7 +399,7 @@ class StatDisplay extends Component {
 					 			{Weight(pokestat.weight)}
 					 	
 					 		</div>
-					 		<div id='height-wrapper'className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+					 		<div id='height-wrapper'className='col-xs-12 col-sm-6 col-md-6 col-lg-6'>
 					 			<div id='height-title'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					 		
 					 				Height:
@@ -415,11 +415,11 @@ class StatDisplay extends Component {
 
 					 	
 					 	</div>
-					 		<div id='right-side'className='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+					 		<div id='right-side'className='col-xs-12 col-sm-6 col-md-6 col-lg-6'>
 					 				<div id='base-stats-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					 						<div id='base-stat-title'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					 					
-					 							Base Stats
+					 							Base Stats --
 					 					
 					 						</div>
 

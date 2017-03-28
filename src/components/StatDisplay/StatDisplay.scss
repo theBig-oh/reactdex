@@ -1,3 +1,457 @@
+$mobileFontSize: 1.15em;
+
+/* 
+	Phones
+ */
+@media screen and (min-width:320px){
+
+
+#stat-display {
+	
+	height:135vh;
+	margin-top:1%;
+	padding:0;
+	float:right;
+
+	background:rgba(191,187,65,0.4);
+
+	#stat-title { 
+		font-size:1.2em;
+	}
+
+	#left-side {
+		#type-wrapper {
+		#type-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.types {
+			font-size:1em;
+			color:#eee;
+		}
+	}
+
+	#ability-wrapper {
+		#ability-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.ability {
+			font-size:1.2em;
+			color:#eee;
+			text-align:right;
+			padding:0;
+			.slot-titles{
+			
+				text-align:left;
+				
+			}
+
+		}
+
+
+
+		#slot1 {
+			background:#FF9A25;
+		}
+		#slot2 {
+			background:#7F4D13;
+		}
+		#hidden-ability {
+			background:#402609;
+		}
+
+	}
+
+	#weight-wrapper {
+		
+		#weight-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#weight {
+			padding:0;
+		}
+		.weights {
+			padding:0;
+			font-size:1.2em;
+			background:#737F7A;
+
+			.weight-title {
+				text-align:left;
+			}
+			.weight-value {
+				text-align:right;
+			}
+		}
+	}
+	#height-wrapper {
+		#height-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#height {
+			padding:0;
+			background:#eee;
+		}
+
+		.heights {
+			padding:0;
+			font-size:1.3em;
+
+
+		}
+
+		.height-value {
+			text-align:right;
+		}
+		}
+	}
+
+	#right-side {
+		padding:0;
+		#base-stats-wrapper {
+			padding:0;
+			#base-stat-title {
+				font-size:1.2em;
+				
+			}
+			.stats {
+				height:10vh;
+
+				.stat-names {
+					font-size:1.0em;
+					padding:0;
+				}
+				.stat-values {
+					height:40%;
+
+					#actual-value {
+						height:100%;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+}
+
+/* 
+	Forgot which phone display this one was for
+ */
+ @media screen and (min-width:375px){
+
+
+#stat-display {
+	
+	height:125vh;
+	margin-top:1%;
+	padding:0;
+	float:right;
+
+	background:rgba(191,187,65,0.4);
+
+	#stat-title { 
+		font-size:1.2em;
+	}
+
+	#left-side {
+		#type-wrapper {
+		#type-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.types {
+			font-size:1em;
+			color:#eee;
+		}
+	}
+
+	#ability-wrapper {
+		#ability-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.ability {
+			font-size:1.2em;
+			color:#eee;
+			text-align:right;
+			padding:0;
+			.slot-titles{
+			
+				text-align:left;
+				
+			}
+
+		}
+
+
+
+		#slot1 {
+			background:#FF9A25;
+		}
+		#slot2 {
+			background:#7F4D13;
+		}
+		#hidden-ability {
+			background:#402609;
+		}
+
+	}
+
+	#weight-wrapper {
+		
+		#weight-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#weight {
+			padding:0;
+		}
+		.weights {
+			padding:0;
+			font-size:1.2em;
+			background:#737F7A;
+
+			.weight-title {
+				text-align:left;
+			}
+			.weight-value {
+				text-align:right;
+			}
+		}
+	}
+	#height-wrapper {
+		#height-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#height {
+			padding:0;
+			background:#eee;
+		}
+
+		.heights {
+			padding:0;
+			font-size:1.3em;
+
+
+		}
+
+		.height-value {
+			text-align:right;
+		}
+		}
+	}
+
+	#right-side {
+
+		#base-stats-wrapper {
+			#base-stat-title {
+				font-size:1.5em;
+				
+			}
+			.stats {
+				height:8vh;
+
+				.stat-names {
+					font-size:1.3em;
+				}
+				.stat-values {
+					height:50%;
+
+					#actual-value {
+						height:100%;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+
+
+}
+
+/* 
+	Tablets 
+ */
+
+
+@media screen and (min-width:768px){
+
+#stat-display {
+	
+	height:56vh;
+	margin-top:1%;
+	padding:0;
+	float:right;
+
+	background:rgba(191,187,65,0.4);
+
+	#stat-title { 
+		font-size:1.2em;
+	}
+
+	#left-side {
+		#type-wrapper {
+		#type-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.types {
+			font-size:1em;
+			color:#eee;
+		}
+	}
+
+	#ability-wrapper {
+		#ability-header{
+			font-size:$mobileFontSize;
+			border-bottom:3px solid #333;
+		}
+		.ability {
+			font-size:1.2em;
+			color:#eee;
+			text-align:right;
+			padding:0;
+			.slot-titles{
+			
+				text-align:left;
+				
+			}
+
+		}
+
+
+
+		#slot1 {
+			background:#FF9A25;
+		}
+		#slot2 {
+			background:#7F4D13;
+		}
+		#hidden-ability {
+			background:#402609;
+		}
+
+	}
+
+	#weight-wrapper {
+		
+		#weight-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#weight {
+			padding:0;
+		}
+		.weights {
+			padding:0;
+			font-size:1.2em;
+			background:#737F7A;
+
+			.weight-title {
+				text-align:left;
+			}
+			.weight-value {
+				text-align:right;
+			}
+		}
+	}
+	#height-wrapper {
+		#height-title {
+			font-size:$mobileFontSize;
+			border-bottom:2px solid #333;
+		}
+		#height {
+			padding:0;
+			background:#eee;
+		}
+
+		.heights {
+			padding:0;
+			font-size:1.3em;
+
+
+		}
+
+		.height-value {
+			text-align:right;
+		}
+		}
+	}
+
+	#right-side {
+
+		#base-stats-wrapper {
+			#base-stat-title {
+				font-size:1.5em;
+				
+			}
+			.stats {
+				height:3vh;
+				margin-bottom:4%;
+
+				.stat-names {
+					font-size:1.3em;
+				}
+				.stat-values {
+					height:50%;
+
+					#actual-value {
+						height:100%;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+
+
+
+}
+
+/* 
+	MDPI laptop displays
+ */
+@media screen and (min-width:320px){
+
+
+
+
+
+}
+
+/* 
+	Most Mac displays
+ */
+
+ @media screen and (min-width:1440px){
+
+
+
+
+
+}
+
+/* 
+	Large displays
+ */
+
+@media screen and (min-width:1920px){
+
 #stat-display {
 	
 	height:50.5vh;
@@ -7,7 +461,7 @@
 
 	background:rgba(191,187,65,0.4);
 
-	#stat-title {
+	#stat-title { 
 		font-size:2em;
 	}
 
@@ -125,72 +579,6 @@
 		}
 	}
 }
-
-
-/* 
-	Phones
- */
-@media screen and (min-width:320px){
-
-
-
-
-
-}
-
-/* 
-	Forgot which phone display this one was for
- */
- @media screen and (min-width:375px){
-
-
-
-
-
-}
-
-/* 
-	Tablets 
- */
-
-
-@media screen and (min-width:768px){
-
-
-
-
-
-}
-
-/* 
-	MDPI laptop displays
- */
-@media screen and (min-width:320px){
-
-
-
-
-
-}
-
-/* 
-	Most Mac displays
- */
-
- @media screen and (min-width:1440px){
-
-
-
-
-
-}
-
-/* 
-	Large displays
- */
-
-@media screen and (min-width:1920px){
-
 
 
 
