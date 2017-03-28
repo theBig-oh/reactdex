@@ -269,6 +269,17 @@ setStatePKMN() {
  }
 
   render() {
+
+
+  	/*
+		This has to be used until I can find out why react router isn't 
+
+		sending my state data into the home component. 
+
+
+		
+  	*/
+
   	if(this.props.location.pathname == '/'){
   		var currentPKMN = <Home pokemonList={this.state.data} maxPKMN={this.state.maxPKMN}/>
 
@@ -277,6 +288,7 @@ setStatePKMN() {
   		
   	} else {
   		var currentPKMN = this.props.children;
+  		console.log('Something happened here');
   	}
 
 
