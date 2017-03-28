@@ -277,7 +277,7 @@
     text-align: right; }
   #stat-display #right-side #base-stats-wrapper #base-stat-title {
     font-size: 1.5em;
-    border-bottom: 2px solid #333; }
+    border-bottom: 2px none; }
   #stat-display #right-side #base-stats-wrapper .stats {
     height: 5vh; }
   #stat-display #right-side #base-stats-wrapper .stats .stat-names {
