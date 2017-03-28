@@ -12,8 +12,90 @@ import { Link, Router} from 'react-router';
 
 */
 
+/*
+
+	Gets the pokemon data
+
+*/
+
+function getPKMN() {
+ 	return new Promise(function(resolve,reject){
+ 		if(localStorage){
+ 			if(localStorage.getItem('PKMNList')){
+ 				resolve(JSON.parse(localStorage.getItem('PKMNList')));
+
+ 				console.log('Pokemon Data Loaded from localStorage');
+ 			}
+ 			else {
+ 				var xhr = new XMLHttpRequest();
+ 				let list;
+ 				xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
+
+ 				xhr.onload = function(){
+ 					if(xhr.status >= 200 && xhr.status < 400){
+ 						list = xhr.response;
+ 						localStorage.setItem('PKMNList',list);
+ 						console.log('localStorage is active, and PKMN List is saved');
+ 				
+ 						resolve(JSON.parse(list));
 
 
+
+ 						} else {
+ 							xhr.error();
+ 						}
+ 					}
+
+ 				xhr.error = function(){
+ 					console.log('failed at getting pokemon list');
+ 					reject(xhr.responseText);
+ 			
+ 				};
+
+ 				xhr.send();
+ 			}
+ 		} else {
+ 			var xhr = new XMLHttpRequest();
+ 		let list;
+ 		xhr.open('GET','http://pokeapi.co/api/v2/pokemon/?limit=861',true);
+
+ 		xhr.onload = function(){
+ 			if(xhr.status >= 200 && xhr.status < 400){
+ 				list = xhr.response;
+ 				
+ 				console.log('No localStorage, got PKMN List');
+ 				
+ 				resolve(JSON.parse(list));
+
+
+
+ 			} else {
+ 				xhr.error();
+ 			}
+ 		}
+
+ 		xhr.error = function(){
+ 			console.log('failed getting pokemon data');
+ 			reject(null);
+ 			
+ 		};
+
+ 		xhr.send();
+ 		}
+ 	})
+ };
+
+
+
+
+
+
+
+/*
+
+	Shows the pokemon Selection
+
+*/
 
 
 function Pokemon(props){
@@ -85,35 +167,43 @@ class Home extends Component {
 		console.log(this.state);
 
 		this.pokeCollect = this.pokeCollect.bind(this);
-		
+		this.setStatePKMN = this.setStatePKMN.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		
 	}
-	componentWillReceiveProps(nextProps) {
-		/*
-			This is really weird. 
+	setStatePKMN() {
+/*	this.setState({
+		data: getPKMN().then(function(data){
+			var stuff = [];
 
-			The docs say I should use this.setState() also refered to self.setState() in there.
+			for(var i=0;i < data.results.length;i++){
+				stuff.push(data.results[i]);
+			}
 
-			But it won't retrieve the pokemon list from the props. 
-
-			Right now, this is the "i'll patch it later" fix.
-
-			This also goes for app.js getPKMN function
-
-		*/
-
-
-
-			var self = this;
-
-			self.state.pkmnlist = self.props.pokemonList;
-			self.state.totalPKMN = self.props.pokemonList.length;			
-
+			return stuff
+		}),
+		maxPKMN: this.state.data.length
+	})
+*/
 	
+	var self = this;
 
-		
-	}
+	getPKMN().then(function(data){
+		var stuff = self.state.pkmnlist;
+
+		for(var i=0; i < data.results.length; i++){
+			stuff.push(data.results[i]);
+		}
+
+		self.setState({
+			pkmnlist: stuff,
+			totalPKMN: stuff.length
+		})
+
+	})
+
+}
+	
 	pokeCollect(deskStartPKMN,mobileStartPKMN){
 			
 			var allpkmn = this.state.pkmnlist;
@@ -182,7 +272,10 @@ class Home extends Component {
 		console.log('firing off pagniation for page ' + event);
 		
 	}
-	
+	componentWillMount() {
+		this.setStatePKMN();
+		this.pokeCollect(this.state.currentBase,this.state.mobileBase);
+	}
 	
 	render(){
 	
