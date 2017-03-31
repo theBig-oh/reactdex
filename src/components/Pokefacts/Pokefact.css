@@ -197,6 +197,19 @@
     padding: 1%; }
   .poke-facts #pokemon-display-left #pokemon-image-wrapper #pokemon-image {
     height: 80%; }
+  .poke-facts #pokemon-display-left #pokemon-image-wrapper #pokemon-info-selection-wrapper {
+    border: 1px solid black;
+    padding: 2%; }
+  .poke-facts #pokemon-display-left #pokemon-image-wrapper #pokemon-info-selection-wrapper #info-window0 {
+    margin-bottom: 2%;
+    background: rgba(191, 187, 65, 0.4); }
+  .poke-facts #pokemon-display-left #pokemon-image-wrapper #pokemon-info-selection-wrapper #info-window1 {
+    margin-bottom: 2%;
+    background: rgba(191, 63, 62, 0.9); }
+  .poke-facts #pokemon-display-left #pokemon-image-wrapper #pokemon-info-selection-wrapper .info-selection {
+    height: 6vh;
+    padding: 2%;
+    font-size: 2em; }
   .poke-facts #pokemon-display-left #pokemon-base-facts #pokemon-name {
     border-bottom: 3px solid #333; }
   .poke-facts #pokemon-display-left #pokemon-base-facts #pokemon-name #poke-name {

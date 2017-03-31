@@ -9,67 +9,129 @@
   #Home {
     height: 100%;
     font-family: 'Arcade'; }
-  #Home #selection-window {
-    height: 100%; }
-  #Home #selection-window a {
-    color: black; }
-  #Home #selection-window .pokemon-selection {
-    height: 8%;
-    background: rgba(87, 116, 225, 0.65);
-    margin-bottom: 2%;
-    border: 5px solid blue;
-    border-radius: 5px;
-    margin-left: 0%;
-    word-wrap: break-word;
-    font-size: 1em;
-    color: black;
-    padding: 0;
-    margin-bottom: 5%;
-    -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
-  #Home #selection-window .pokemon-selection .poke-name {
-    height: 100%;
-    padding: 0; }
-  #Home #selection-window .pokemon-selection:hover {
-    background: rgba(87, 116, 225, 0.95); }
-  #Home #selection-buttons {
-    position: relative;
-    z-index: 3;
-    top: 3%; }
-  #Home #selection-buttons .poke-select {
-    display: inline-flex; }
-  #Home #selection-buttons .poke-select li {
-    border: 1px solid white;
-    width: 30%;
-    text-align: center;
-    font-size: 1em;
-    list-style: none;
-    margin-left: 5%;
-    background: rgba(111, 120, 127, 0.8);
-    -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
-  #Home #selection-buttons .poke-select li a {
-    color: white;
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:first-child a:after {
-    content: ' Prev';
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:last-child {
-    width: 15vw; }
-  #Home #selection-buttons .poke-select li:last-child a:before {
-    content: 'Next';
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:nth-child(2) a:before {
-    content: 'Page #'; }
-  #Home #selection-buttons .poke-select li:nth-child(2) a {
-    text-decoration: none;
-    cursor: default; } }
+    #Home #selection-window {
+      height: 100%; }
+      #Home #selection-window a {
+        color: black; }
+      #Home #selection-window .pokemon-selection {
+        height: 8%;
+        background: rgba(87, 116, 225, 0.65);
+        margin-bottom: 2%;
+        border: 5px solid blue;
+        border-radius: 5px;
+        margin-left: 0%;
+        word-wrap: break-word;
+        font-size: 1em;
+        color: black;
+        padding: 0;
+        margin-bottom: 5%;
+        -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+        #Home #selection-window .pokemon-selection .poke-name {
+          height: 100%;
+          padding: 0; }
+        #Home #selection-window .pokemon-selection:hover {
+          background: rgba(87, 116, 225, 0.95); }
+    #Home #selection-buttons {
+      position: relative;
+      z-index: 3;
+      top: 3%; }
+      #Home #selection-buttons .poke-select {
+        display: inline-flex; }
+        #Home #selection-buttons .poke-select li {
+          border: 1px solid white;
+          width: 30%;
+          text-align: center;
+          font-size: 1em;
+          list-style: none;
+          margin-left: 5%;
+          background: rgba(111, 120, 127, 0.8);
+          -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+          #Home #selection-buttons .poke-select li a {
+            color: white;
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:first-child a:after {
+            content: ' Prev';
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:last-child {
+            width: 15vw; }
+            #Home #selection-buttons .poke-select li:last-child a:before {
+              content: 'Next';
+              width: 100%; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a:before {
+            content: 'Page #'; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a {
+            text-decoration: none;
+            cursor: default; } }
 
 /* 
 	Forgot which phone display this one was for
  */
+@media screen and (min-width: 375px) {
+  #Home {
+    height: 100%;
+    font-family: 'Arcade'; }
+    #Home #selection-window {
+      height: 100%; }
+      #Home #selection-window a {
+        color: black; }
+      #Home #selection-window .pokemon-selection {
+        height: 8%;
+        background: rgba(87, 116, 225, 0.65);
+        margin-bottom: 2%;
+        border: 5px solid blue;
+        border-radius: 5px;
+        margin-left: 0%;
+        word-wrap: break-word;
+        font-size: 1em;
+        color: black;
+        padding: 0;
+        margin-bottom: 5%;
+        -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+        #Home #selection-window .pokemon-selection .poke-name {
+          height: 100%;
+          padding: 0; }
+        #Home #selection-window .pokemon-selection:hover {
+          background: rgba(87, 116, 225, 0.95); }
+    #Home #selection-buttons {
+      position: relative;
+      z-index: 3;
+      top: 3%; }
+      #Home #selection-buttons .poke-select {
+        display: inline-flex; }
+        #Home #selection-buttons .poke-select li {
+          border: 1px solid white;
+          width: 30%;
+          text-align: center;
+          font-size: 1em;
+          list-style: none;
+          margin-left: 5%;
+          background: rgba(111, 120, 127, 0.8);
+          -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+          #Home #selection-buttons .poke-select li a {
+            color: white;
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:first-child a:after {
+            content: ' Prev';
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:last-child {
+            width: 15vw; }
+            #Home #selection-buttons .poke-select li:last-child a:before {
+              content: 'Next';
+              width: 100%; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a:before {
+            content: 'Page #'; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a {
+            text-decoration: none;
+            cursor: default; } }
+
 /* 
 	Tablets 
  */
@@ -86,55 +148,55 @@
   #Home {
     height: 100%;
     font-family: 'Arcade'; }
-  #Home #selection-window {
-    height: 100%; }
-  #Home #selection-window a {
-    color: black; }
-  #Home #selection-window .pokemon-selection {
-    height: 9%;
-    background: rgba(87, 116, 225, 0.65);
-    margin-bottom: 2%;
-    border: 5px solid blue;
-    border-radius: 5px;
-    margin-left: 6%;
-    word-wrap: break-word;
-    font-size: 2em;
-    color: black;
-    -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
-  #Home #selection-window .pokemon-selection:hover {
-    background: rgba(87, 116, 225, 0.95); }
-  #Home #selection-buttons {
-    position: relative;
-    z-index: 3;
-    top: 3%; }
-  #Home #selection-buttons .poke-select {
-    display: inline-flex; }
-  #Home #selection-buttons .poke-select li {
-    border: 1px solid white;
-    width: 25%;
-    text-align: center;
-    font-size: 3em;
-    list-style: none;
-    margin-left: 5%;
-    background: rgba(111, 120, 127, 0.8);
-    -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
-    box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
-  #Home #selection-buttons .poke-select li a {
-    color: white;
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:first-child a:after {
-    content: ' Prev';
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:last-child {
-    width: 10vw; }
-  #Home #selection-buttons .poke-select li:last-child a:before {
-    content: 'Next';
-    width: 100%; }
-  #Home #selection-buttons .poke-select li:nth-child(2) a:before {
-    content: 'Page #'; }
-  #Home #selection-buttons .poke-select li:nth-child(2) a {
-    text-decoration: none;
-    cursor: default; } }
+    #Home #selection-window {
+      height: 100%; }
+      #Home #selection-window a {
+        color: black; }
+      #Home #selection-window .pokemon-selection {
+        height: 9%;
+        background: rgba(87, 116, 225, 0.65);
+        margin-bottom: 2%;
+        border: 5px solid blue;
+        border-radius: 5px;
+        margin-left: 6%;
+        word-wrap: break-word;
+        font-size: 2em;
+        color: black;
+        -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+        box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+        #Home #selection-window .pokemon-selection:hover {
+          background: rgba(87, 116, 225, 0.95); }
+    #Home #selection-buttons {
+      position: relative;
+      z-index: 3;
+      top: 3%; }
+      #Home #selection-buttons .poke-select {
+        display: inline-flex; }
+        #Home #selection-buttons .poke-select li {
+          border: 1px solid white;
+          width: 25%;
+          text-align: center;
+          font-size: 3em;
+          list-style: none;
+          margin-left: 5%;
+          background: rgba(111, 120, 127, 0.8);
+          -webkit-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          -moz-box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63);
+          box-shadow: 22px 26px 37px -1px rgba(0, 0, 0, 0.63); }
+          #Home #selection-buttons .poke-select li a {
+            color: white;
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:first-child a:after {
+            content: ' Prev';
+            width: 100%; }
+          #Home #selection-buttons .poke-select li:last-child {
+            width: 10vw; }
+            #Home #selection-buttons .poke-select li:last-child a:before {
+              content: 'Next';
+              width: 100%; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a:before {
+            content: 'Page #'; }
+          #Home #selection-buttons .poke-select li:nth-child(2) a {
+            text-decoration: none;
+            cursor: default; } }

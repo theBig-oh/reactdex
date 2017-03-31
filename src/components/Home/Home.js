@@ -99,8 +99,7 @@ function getPKMN() {
 
 
 function Pokemon(props){
-	console.log(props.pokemon);
-	console.log(props.pokemon[1]);
+	
 	const pkid = props.pokemon[1]+1;
 	const pokem = 'pkmn/'+(props.pokemon[1] + 1);
 
@@ -164,7 +163,7 @@ class Home extends Component {
 
 			
 		} 
-		console.log(this.state);
+		
 
 		this.pokeCollect = this.pokeCollect.bind(this);
 		this.setStatePKMN = this.setStatePKMN.bind(this);
@@ -279,19 +278,19 @@ class Home extends Component {
 	
 	render(){
 	
-		var self = this;
+		var self = this; 
 
 	
 
 		this.pokeCollect(this.state.currentBase,this.state.mobileBase);
 		
-		console.log(this.props);
 		
-		console.log(this.props.children);
+		
+		
 		var mobilePKMN = this.state.mobileShownPKMN;
 		var currentPKMN = this.state.currentShownPKMN;
 		
-		console.log(mobilePKMN);
+	
 		
 		return (
 				<div id='Home'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>

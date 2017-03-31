@@ -3,6 +3,8 @@ import { Pagination } from 'react-bootstrap';
 import './Pokefact.css';
 import { Link, Router} from 'react-router';
 import StatDisplay from '../StatDisplay/StatDisplay';
+import DexEntry from '../DexEntry/DexEntry';
+
 /*
 	
 	Data either gets the "Actual Pokemon" data if typed is true (Actual stats)
@@ -73,6 +75,15 @@ function getData(id, typed){
 
 
 
+
+
+
+
+
+
+
+
+
 class Pokefact extends Component {
 	constructor(){
 		super()
@@ -80,20 +91,22 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: null,
 			pokemonDex: null,
+			currentInfo: 0,
 			
 
 		}
 
 		this.setPokeFacts = this.setPokeFacts.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	setPokeFacts(){
 		var pokemonid = this.props.params.pkmnId;
-		console.log(pokemonid);
+		
 		var self = this;
 		getData(pokemonid,true).then(function(data){
 
-			console.log(data);
+			
 
 			self.setState({
 				pokemonStats: data,
@@ -114,6 +127,14 @@ class Pokefact extends Component {
 
 
 	}
+	handleClick(event){
+		
+
+		this.setState({
+			currentInfo: event
+		})
+	}	
+
 	componentDidMount() {
 		this.setPokeFacts();
 	}
@@ -124,8 +145,14 @@ class Pokefact extends Component {
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
 		var poketype;
+		var infoWindows = [['Basic Stats   and   Info',<StatDisplay pokemonstat = {pokeStats}/>], ['PokeDex   Entries',<DexEntry />],['Sprites','In Development']];
+
 		
 		var self = this;
+
+		
+		var currentWindow = infoWindows[this.state.currentInfo][1];
+		console.log(currentWindow);
 
 		/*
 			Working on loading screen later.
@@ -134,9 +161,12 @@ class Pokefact extends Component {
 		if(!pokeStats || !pokeDex){
 			/*
 				Loading screen
+
+				Gotta make this into its own component... 
+
 			*/
 			return (
-					<div id='loading-screen'className='col-xs-12 col-sm-12 col-md-5 col-lg-5'> 
+					<div id='loading-screen'className='col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6'> 
 						
 						<div id='loading-text'className='col-xs-12 col-sm-12 col-md-10 col-lg-10'>
 							Loading...
@@ -150,7 +180,7 @@ class Pokefact extends Component {
 		} else {
 
 		 	poketype = this.state.pokemonTypes;
-
+		 	
 			var pokemonImage = {
 					background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.params.pkmnId+'.png)no-repeat',
 					backgroundSize:'68%',
@@ -177,10 +207,32 @@ class Pokefact extends Component {
 					<div id='pokemon-display-left' className='pokemon-fact-display hidden-xs hidden-sm col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
 						<div id='pokemon-image-wrapper' className='col-xs-3 col-sm-3 col-md-3 col-lg-3'>
 							<div id='pokemon-image' className='col-xs-12 col-sm-12 col-md-12 col-lg-12' style={pokemonImage}>
+						
+
+							</div>
+							<div id='pokemon-info-selection-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									{
+
+											infoWindows.map(function(id,num){
+												return (
+															<div key={id}id={'info-window'+num}  className='col-xs-12 col-sm-12 col-md-12 col-lg-12 info-selection' onClick={(event)=>self.handleClick(num,event)}>
+														
+																{id[0]}
+														
+															</div>
+														
+														
+
+													)
+											})
+
+
+									}
+								 	
+									
 							
-
-						</div>
-
+							</div>
+							
 						</div>
 						<div id='pokemon-base-facts' className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -190,7 +242,7 @@ class Pokefact extends Component {
 							
 							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 								<div id='info-window'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									<StatDisplay pokemonstat = {pokeStats}/>
+										{currentWindow}
 
 								
 

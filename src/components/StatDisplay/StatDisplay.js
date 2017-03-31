@@ -85,7 +85,7 @@ function AbilitiesDisplay(abl){
 		Debugging purposes...
 
 	*/
-	console.log(able);
+	
 
 	for(var x=0;x< able.length;x++){
 		if(able[x].is_hidden == true){
@@ -147,7 +147,7 @@ function Weight(weight){
 	var convertedWeight = usWeight.toFixed(2);
 
 
-	console.log(rawWeight,convertedWeight);
+	
 
 	var div = 	<div id='weight'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					<div id='metric'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 weights'>
@@ -219,7 +219,6 @@ function Height(height){
 
 		inches = Math.ceil(inches - (feet*12)).toFixed(1);
 
-		console.log(inches);
 
 
 		
@@ -228,10 +227,10 @@ function Height(height){
 		inches = inches.toFixed(1);
 	}
 
-	console.log(feet,inches);
+	
 
 
-	console.log('Metric: '+metricHeight+'  Imperial: '+imperialHeight);
+	
 
 
 	var div = 	<div id='height'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -281,7 +280,14 @@ function Height(height){
 
 
 /*
-	Graphical view of base stats 
+	Graphical view of base stats...
+
+	This is currently a horizontal bar graph.
+
+	Will change to a hexagon/star graph later. 
+
+
+	Wanna focus on other pokemon info first.
 
 
 */
@@ -308,7 +314,7 @@ function VisualStats(stats){
 
 		}
 
-		console.log('ayy');
+		
 
 		var div = 	<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12 stats'>
 							<div id='stat-name'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 stat-names'>
