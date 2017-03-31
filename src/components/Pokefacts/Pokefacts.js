@@ -91,7 +91,7 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: null,
 			pokemonDex: null,
-			currentInfo: 0,
+			currentInfo: 1,
 			
 
 		}
@@ -128,7 +128,7 @@ class Pokefact extends Component {
 
 	}
 	handleClick(event){
-		
+		/*event.preventDefault();*/ //Shows up as not a function...
 
 		this.setState({
 			currentInfo: event
@@ -145,7 +145,7 @@ class Pokefact extends Component {
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
 		var poketype;
-		var infoWindows = [['Basic Stats   and   Info',<StatDisplay pokemonstat = {pokeStats}/>], ['PokeDex   Entries',<DexEntry />],['Sprites','In Development']];
+		var infoWindows = [['Basic Stats   and   Info',<StatDisplay pokemonstat = {pokeStats}/>], ['PokeDex   Entries',<DexEntry pokemondex = {pokeDex}/>],['Sprites','In Development']];
 
 		
 		var self = this;
