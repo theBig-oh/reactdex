@@ -8,11 +8,113 @@ import { Link, Router} from 'react-router';
 
 */
 
-function DexEntries(lang,gen){
+function DexEntries(lang,gen,dex){
 	var language = lang;
 	var generation = gen;
+	var collected = [];
+	var collectedDex = [];
 
-	console.log(language,generation);
+	var gamegens = [
+			{'gen':'generation-i',
+			  'games':[
+			  		'red',
+			  		'blue',
+			  		'yellow'
+			  	]
+			  },
+			{'gen':'generation-ii',
+			  'games':[
+			  		'gold',
+			  		'silver',
+			  		'crystal'
+			  	]
+			  },
+			{'gen':'generation-iii',
+			  'games':[
+			  		'ruby',
+			  		'sapphire',
+			  		'emerald',
+			  		'firered',
+			  		'leafgreen'
+			  	]
+			  },
+			{'gen':'generation-iv',
+			  'games':[
+			  		'diamond',
+			  		'pearl',
+			  		'platinum',
+			  		'heartgold',
+			  		'soulsilver'
+
+			  	]
+			  },
+			{'gen':'generation-v',
+			  'games':[
+			  		'black',
+			  		'white',
+			  		'black-2',
+			  		'white-2'
+			  	]
+			  },
+			{'gen':'generation-vi',
+			  'games':[
+			  		'x',
+			  		'y',
+			  		'alpha-sapphire',
+			  		'omega-ruby'
+			  	]
+			  },
+			
+
+
+
+	];
+
+	/*
+		Filters by dex entries by generation
+
+	*/
+	
+	for(var x=0; x < gamegens.length; x++){
+		if(generation == gamegens[x].gen){
+			for(var y=0;y < gamegens[x].games.length; y++){
+				collected.push(gamegens[x].games[y]);
+			}
+		}
+	}
+
+
+	/*
+		Filters by language
+	
+	*/
+	for(var z=0; z < dex.length; z++){
+		if(dex[z].language.name == language){
+			console.log('found lang');
+			
+
+			for(var q=0; q < collected.length; q++){
+				
+				if(dex[z].version.name == collected[q]){
+					console.log('found game');
+					console.log(dex[z]);
+					collectedDex.push({'text':dex[z].flavor_text,'version':collected[q]});
+					console.log(collectedDex);
+						
+				}
+
+			}
+		}
+	}
+	
+	var readyDex = collectedDex.reverse();
+	console.log(collectedDex);
+	console.log(readyDex);
+	console.log(language);
+
+	
+	
+	
 }
 
 
@@ -75,6 +177,8 @@ class DexEntry extends Component {
 
 		/*
 			Which generations the pokemon contain and origin generation
+
+			***ONLY SHOWS UP TO 6TH GENERATION DUE TO API***
 		*/
 
 		var gens = [
@@ -84,7 +188,7 @@ class DexEntry extends Component {
 			{'gen':'generation-iv','name':'IV'},
 			{'gen':'generation-v','name':'V'},
 			{'gen':'generation-vi','name':'VI'},
-			{'gen':'generation-vii','name':'VII'}
+			
 		];
 
 		var generation = this.props.pokemondex.generation.name;
@@ -92,12 +196,17 @@ class DexEntry extends Component {
 		var collectedGen = [];
 
 		console.log(generation);
+		var dexstuff = this.props.pokemondex.flavor_text_entries;
 
+		
 		var pokemonlanguages = this.props.pokemondex.names;
 		var currentlangselection = [];
 		var self = this;
 
+
 		/*
+			Sets filter parameters by language.
+
 			Some pokemon may not have the language available. This filters it in selection first.
 			
 		*/
@@ -109,7 +218,7 @@ class DexEntry extends Component {
 			}
 		}
 		/*
-			Filters by the generation the pokemon first appeared and adds the ones it has shown in. 
+			Sets filter parameters by the generation the pokemon first appeared and adds the ones it has shown in. 
 		
 		*/
 		for(var x=0; x< gens.length;x++){
@@ -201,7 +310,7 @@ class DexEntry extends Component {
 									  	</div>
 									  	<div id='generation-content-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									  	
-									  			{DexEntries(this.state.currentLang,this.state.currentGen)}
+									  			{DexEntries(this.state.currentLang,this.state.currentGen,dexstuff)}
 									  	
 									  	</div>
 									  	
