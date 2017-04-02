@@ -4,21 +4,23 @@ import './DexEntry.css';
 import { Link, Router} from 'react-router';
 
 /*
-function ShownDex(props,language){
-
-
-
-
-	return(
-
-
-		)
-
-}
+	Dex entries over here...
 
 */
 
+function DexEntries(lang,gen){
+	var language = lang;
+	var generation = gen;
 
+	console.log(language,generation);
+}
+
+
+
+/*
+	Shown component
+	
+*/
 class DexEntry extends Component {
 	constructor(){
 		super();
@@ -51,6 +53,11 @@ class DexEntry extends Component {
 		})
 	}
 	render(){
+
+		/*
+			Language keycodes and colors
+		*/
+
 		var langs = [
 			{'code':'en','lang':'English','color':'#BF221E'},
 			{'code':'ja','lang':'Japanese','color':'#717372'},
@@ -65,6 +72,11 @@ class DexEntry extends Component {
 			{'code':'ja-kanji','lang':'Kanji','color':'#B2A0A4'}
 
 		];
+
+		/*
+			Which generations the pokemon contain and origin generation
+		*/
+
 		var gens = [
 			{'gen':'generation-i','name':'I'},
 			{'gen':'generation-ii','name':'II'},
@@ -97,7 +109,7 @@ class DexEntry extends Component {
 			}
 		}
 		/*
-			Filters by the generation the pokemon first appeared. 
+			Filters by the generation the pokemon first appeared and adds the ones it has shown in. 
 		
 		*/
 		for(var x=0; x< gens.length;x++){
@@ -110,7 +122,11 @@ class DexEntry extends Component {
 		}
 
 		
+		/*
+			Changes the color based on language selected.
 
+			Default is English/Red (Colors will changed for better a e s t h e t i c )
+		*/
 		var dexStyle = {
 			background: this.state.currentColor
 		}
@@ -185,7 +201,7 @@ class DexEntry extends Component {
 									  	</div>
 									  	<div id='generation-content-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									  	
-									  			Content
+									  			{DexEntries(this.state.currentLang,this.state.currentGen)}
 									  	
 									  	</div>
 									  	
