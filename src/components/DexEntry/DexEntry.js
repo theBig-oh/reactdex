@@ -11,7 +11,7 @@ import { Link, Router} from 'react-router';
 function DexEntries(lang,gen,dex){
 	var language = lang;
 	var generation = gen;
-	var collected = [];
+	var collectedGames = [];
 	var collectedDex = [];
 
 	var gamegens = [
@@ -78,7 +78,7 @@ function DexEntries(lang,gen,dex){
 	for(var x=0; x < gamegens.length; x++){
 		if(generation == gamegens[x].gen){
 			for(var y=0;y < gamegens[x].games.length; y++){
-				collected.push(gamegens[x].games[y]);
+				collectedGames.push(gamegens[x].games[y]);
 			}
 		}
 	}
@@ -86,33 +86,68 @@ function DexEntries(lang,gen,dex){
 
 	/*
 		Filters by language
+
+		***API ONLY HAS ENGLISH TRANSLATIONS AND GEN 6 MULTI LANGUAGE ENTRIES. ***
 	
 	*/
 	for(var z=0; z < dex.length; z++){
 		if(dex[z].language.name == language){
-			console.log('found lang');
 			
 
-			for(var q=0; q < collected.length; q++){
-				
-				if(dex[z].version.name == collected[q]){
-					console.log('found game');
-					console.log(dex[z]);
-					collectedDex.push({'text':dex[z].flavor_text,'version':collected[q]});
-					console.log(collectedDex);
+			for(var q=0; q < collectedGames.length; q++){
+			
+				if(dex[z].version.name == collectedGames[q]){
+					
+					collectedDex.push({'text':dex[z].flavor_text,'version':collectedGames[q]});
+					
 						
+				} else {
+					console.log('didn\'t find game');
+					
 				}
 
 			}
 		}
 	}
+	if(language != 'en' && collectedDex.length == 0){
+		console.log('no entries for '+ language);
+
+		collectedDex.push({'text':'Current API does not support this language yet... ','version':'N/A... Try Gen 6 or above'});
+	} 
 	
 	var readyDex = collectedDex.reverse();
 	console.log(collectedDex);
-	console.log(readyDex);
 	console.log(language);
+	var dextext = [];
 
-	
+	for(var x=0;x < collectedDex.length; x++){
+		var div = 	<div id={'dex-entry'+x} className='col-xs-12 col-sm-12 col-md-6 col-lg-6 dex-entries'>
+								<div id='innerdex'className='col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+							
+									<div id={'dex-entry-text'+x}className='col-xs-12 col-sm-12 col-md-12 col-lg-12 dex-entries-text'>
+						
+								{collectedDex[x].text}
+						
+							</div>
+							<div id={'dex-entry-version'+x}className='col-xs-12 col-sm-12 col-md-12 col-lg-12 dex-entries-versions'>
+							
+								From : Pokemon {collectedDex[x].version}
+							
+							</div>
+							
+							
+								</div>
+							
+						
+				
+		
+			</div>;
+
+			dextext.push(div);
+		
+	}
+
+	return dextext;
 	
 	
 }
@@ -277,9 +312,9 @@ class DexEntry extends Component {
 							</div>
 								<div id='dex-info-entry-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12' style={dexStyle}>
 							
-									  	<div id='generation-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									  	<div id='generation-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12 generation-wrappers'>
 									  
-									  		 	<div id=''className='col-xs-12 col-sm-12 col-md-2 col-lg-2'>
+									  		 	<div id='generation-title'className='col-xs-12 col-sm-12 col-md-2 col-lg-2 generation-titles'>
 									  		 
 									  		 		Generation:
 									  		 
@@ -289,7 +324,7 @@ class DexEntry extends Component {
 									  		 			
 
 									  		 			return (
-									  		 						<div key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1' onClick={(event)=>self.handleGenClick(key.gen,event)} >
+									  		 						<div key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
 									  		 					
 									  		 							{key.name}
 									  		 					

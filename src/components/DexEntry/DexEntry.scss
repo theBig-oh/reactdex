@@ -1,3 +1,55 @@
 #dex-entry {
 	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+				}
+				
+			}
+		}
+
+
+	}
 }
