@@ -1,36 +1,34 @@
 #dex-entry {
   color: white; }
-
-#dex-entry #language-selection-wrapper {
-  font-size: 1.1em; }
-
-#dex-entry #dex-info-entry-wrapper {
-  height: 50vh; }
-
-#dex-entry #dex-info-entry-wrapper #generation-wrapper {
-  padding: 0; }
-
-#dex-entry #dex-info-entry-wrapper #generation-wrapper #generation-title {
-  font-size: 1.5em; }
-
-#dex-entry #dex-info-entry-wrapper #generation-wrapper .generations {
-  font-size: 1.2em; }
-
-#dex-entry #dex-info-entry-wrapper #generation-wrapper .generations:hover {
-  background: black;
-  cursor: pointer; }
-
-#dex-entry #dex-info-entry-wrapper #generation-content-wrapper {
-  margin-top: 1%;
-  padding: 1%; }
-
-#dex-entry #dex-info-entry-wrapper #generation-content-wrapper .dex-entries {
-  height: 12.5vh;
-  padding: 1%;
-  margin-top: 2%; }
-
-#dex-entry #dex-info-entry-wrapper #generation-content-wrapper .dex-entries #innerdex {
-  background: #444;
-  height: 118%;
-  font-size: 1em;
-  padding: 0; }
+  #dex-entry #language-selection-wrapper {
+    font-size: 1.1em; }
+    #dex-entry #language-selection-wrapper .langs:hover {
+      text-decoration: underline;
+      cursor: pointer; }
+  #dex-entry #dex-info-entry-wrapper {
+    height: 50vh; }
+    #dex-entry #dex-info-entry-wrapper #generation-wrapper {
+      padding: 0; }
+      #dex-entry #dex-info-entry-wrapper #generation-wrapper #generation-title {
+        font-size: 1.5em; }
+      #dex-entry #dex-info-entry-wrapper #generation-wrapper .generations {
+        font-size: 1.2em; }
+        #dex-entry #dex-info-entry-wrapper #generation-wrapper .generations:hover {
+          background: black;
+          cursor: pointer; }
+    #dex-entry #dex-info-entry-wrapper #generation-content-wrapper {
+      margin-top: 1%;
+      padding: 1%; }
+      #dex-entry #dex-info-entry-wrapper #generation-content-wrapper .dex-entries {
+        height: 12.5vh;
+        padding: 1%;
+        margin-top: 2%; }
+        #dex-entry #dex-info-entry-wrapper #generation-content-wrapper .dex-entries #innerdex {
+          background: #444;
+          height: 118%;
+          font-size: 1em;
+          padding: 0;
+          border-bottom: 3px solid #333;
+          border-right: 3px solid #333; }
+          #dex-entry #dex-info-entry-wrapper #generation-content-wrapper .dex-entries #innerdex .dex-entries-text {
+            border-bottom: 3px solid #333; }

@@ -288,9 +288,11 @@ class DexEntry extends Component {
 												background:langObject.color
 											}
 
+
+
 											return (
 
-														<div key={key}id={'lang-selection-'+id} className='col-xs-12 col-sm-12 col-md-1 col-lg-1' onClick={(event)=>self.handleLangClick(langObject,event)} style={styleObject}>
+														<div key={key}id={'lang-selection-'+id} className='col-xs-12 col-sm-12 col-md-1 col-lg-1 langs' onClick={(event)=>self.handleLangClick(langObject,event)} style={styleObject}>
 													
 															{key[0]}
 													
@@ -323,7 +325,25 @@ class DexEntry extends Component {
 									  		 		collectedGen.map(function(key,id){
 									  		 			
 
-									  		 			return (
+									  		 			if(key.gen == self.state.currentGen){
+
+									  		 				var styleObject = {
+									  		 					background:'black'
+									  		 				};
+
+
+									  		 				return (
+									  		 						<div style={styleObject}key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
+									  		 					
+									  		 							{key.name}
+									  		 					
+									  		 						</div>
+									  		 					
+
+									  		 				)
+
+									  		 			} else {
+									  		 				return (
 									  		 						<div key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
 									  		 					
 									  		 							{key.name}
@@ -332,6 +352,7 @@ class DexEntry extends Component {
 									  		 					
 
 									  		 				)
+									  		 			}
 
 
 									  		 		})

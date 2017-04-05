@@ -4,6 +4,7 @@ import './Pokefact.css';
 import { Link, Router} from 'react-router';
 import StatDisplay from '../StatDisplay/StatDisplay';
 import DexEntry from '../DexEntry/DexEntry';
+import PokeSprites from '../PokeSprites/PokeSprites';
 
 /*
 	
@@ -87,11 +88,12 @@ function getData(id, typed){
 class Pokefact extends Component {
 	constructor(){
 		super()
-
+		
 		this.state = {
 			pokemonStats: null,
 			pokemonDex: null,
-			currentInfo: 1,
+			currentInfo: 2,
+
 			
 
 		}
@@ -110,7 +112,7 @@ class Pokefact extends Component {
 
 			self.setState({
 				pokemonStats: data,
-				
+				currentPKMN: pokemonid
 			});
 
 
@@ -141,17 +143,39 @@ class Pokefact extends Component {
 
 	render(){
 
-
+		var pokemonid = this.state.currentPKMN;
 		var pokeStats = this.state.pokemonStats;
 		var pokeDex = this.state.pokemonDex;
 		var poketype;
-		var infoWindows = [['Basic Stats   and   Info',<StatDisplay pokemonstat = {pokeStats}/>], ['PokeDex   Entries',<DexEntry pokemondex = {pokeDex}/>],['Sprites','In Development']];
+		var infoWindows = [
+
+							{'name':'Basic Stats   and   Info',
+							 'tag':<StatDisplay pokemonstat = {pokeStats}/>,
+							 'activeColor':'rgba(191,187,65,0.8)',
+							 'baseColor':'rgba(191,187,65,0.4)'
+
+							},
+		 					{'name':'PokeDex   Entries',
+		 					 'tag':<DexEntry pokemondex = {pokeDex}/>,
+		 					 'activeColor':'rgba(191,63,62,0.9)',
+		 					 'baseColor':'rgba(191,63,62,0.4)'
+
+
+		 					},
+		 					{'name':'Sprites',
+		 					 'tag':<PokeSprites pokemonid = {pokemonid} />,
+		 					 'activeColor':'rgba(65,133,166,0.9)',
+		 					 'baseColor':'rgba(65,133,166,0.4)'
+
+		 					}
+
+		 					];
 
 		
 		var self = this;
 
 		
-		var currentWindow = infoWindows[this.state.currentInfo][1];
+		var currentWindow = infoWindows[this.state.currentInfo];
 		console.log(currentWindow);
 
 		/*
@@ -214,10 +238,21 @@ class Pokefact extends Component {
 									{
 
 											infoWindows.map(function(id,num){
+													var highLight = {
+														background:id.baseColor,
+													}
+
+												console.log('this is div ' + num);
+												if(num == self.state.currentInfo){
+													 highLight.background = id.activeColor;
+													
+												} 
+												
+
 												return (
-															<div key={id}id={'info-window'+num}  className='col-xs-12 col-sm-12 col-md-12 col-lg-12 info-selection' onClick={(event)=>self.handleClick(num,event)}>
+															<div key={num}id={'info-window'+num}  style={highLight}className='col-xs-12 col-sm-12 col-md-12 col-lg-12 info-selection' onClick={(event)=>self.handleClick(num,event)}>
 														
-																{id[0]}
+																{id.name}
 														
 															</div>
 														
@@ -242,7 +277,7 @@ class Pokefact extends Component {
 							
 							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 								<div id='info-window'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-										{currentWindow}
+										{currentWindow.tag}
 
 								
 

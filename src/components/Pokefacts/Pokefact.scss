@@ -377,7 +377,7 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 			}
 
 			#pokemon-info-selection-wrapper {
-				border:1px solid black;
+				border-right:5px solid #333;
 
 				padding:2%;
 
@@ -385,15 +385,17 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 
 				#info-window0 {
 					margin-bottom:2%;
-					background:rgba(191,187,65,0.4);
+					
 				}
 				#info-window1 {
 					margin-bottom:2%;
-					background:rgba(191,63,62,0.9);
+			
 				}
 
+				
+				
 				.info-selection {
-					
+					cursor:pointer;
 					height:6vh;
 					padding:2%;
 					font-size:2em;
