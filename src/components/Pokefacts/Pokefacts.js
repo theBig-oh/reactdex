@@ -92,7 +92,7 @@ class Pokefact extends Component {
 		this.state = {
 			pokemonStats: null,
 			pokemonDex: null,
-			currentInfo: 2,
+			currentInfo: 0,
 
 			
 
@@ -273,6 +273,8 @@ class Pokefact extends Component {
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									<span id='poke-name'className='col-xs-8 col-sm-8 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
 									<span id='poke-id'className='col-xs-4 col-sm-4 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
+									
+
 							</div>
 							
 							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -304,11 +306,44 @@ class Pokefact extends Component {
 							<div id='pokemon-name' className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 									<span id='poke-name'className='col-xs-8 col-sm-8 col-md-6 col-lg-6 poke-top-stats'>{pokeStats.name} </span>
 									<span id='poke-id'className='col-xs-4 col-sm-4 col-md-6 col-lg-6 poke-top-stats'>#{pokeStats.id} </span>
+										<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									
+											{
+
+											infoWindows.map(function(id,num){
+													var highLight = {
+														background:id.baseColor,
+													}
+
+												console.log('this is div ' + num);
+												if(num == self.state.currentInfo){
+													 highLight.background = id.activeColor;
+													
+												} 
+												
+
+												return (
+															<div key={num}id={'info-window'+num}  style={highLight}className='col-xs-12 col-sm-12 col-md-12 col-lg-12 info-selection' onClick={(event)=>self.handleClick(num,event)}>
+														
+																{id.name}
+														
+															</div>
+														
+														
+
+													)
+											})
+
+
+									}
+									
+										</div>
+									
 							</div>
 							
 							<div id='info-window-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 								<div id='info-window'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									<StatDisplay pokemonstat = {pokeStats}/>
+									{currentWindow.tag}
 
 								
 

@@ -1,3 +1,9 @@
+
+/* 
+	Phones
+ */
+@media screen and (min-width:320px){
+
 #dex-entry {
 	color:white;
 
@@ -69,4 +75,428 @@
 
 
 	}
+}
+
+
+
+
+}
+
+/* 
+	Forgot which phone display this one was for
+ */
+ @media screen and (min-width:375px){
+
+#dex-entry {
+	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+
+		.langs {
+
+			&:hover{
+				text-decoration: underline;
+				cursor:pointer;
+				
+			}
+		}
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+		
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+					border-bottom:3px solid #333;
+					border-right:3px solid #333;
+
+
+					.dex-entries-text {
+						border-bottom:3px solid #333;
+					}
+
+				}
+				
+			}
+		}
+
+
+	}
+}
+
+
+
+
+}
+
+/* 
+	Tablets 
+ */
+
+
+@media screen and (min-width:768px){
+
+#dex-entry {
+	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+
+		.langs {
+
+			&:hover{
+				text-decoration: underline;
+				cursor:pointer;
+				
+			}
+		}
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+		
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+					border-bottom:3px solid #333;
+					border-right:3px solid #333;
+
+
+					.dex-entries-text {
+						border-bottom:3px solid #333;
+					}
+
+				}
+				
+			}
+		}
+
+
+	}
+}
+
+
+
+
+}
+
+/* 
+	MDPI laptop displays
+ */
+@media screen and (min-width:320px){
+#dex-entry {
+	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+
+		.langs {
+
+			&:hover{
+				text-decoration: underline;
+				cursor:pointer;
+				
+			}
+		}
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+		
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+					border-bottom:3px solid #333;
+					border-right:3px solid #333;
+
+
+					.dex-entries-text {
+						border-bottom:3px solid #333;
+					}
+
+				}
+				
+			}
+		}
+
+
+	}
+}
+
+
+
+
+
+}
+
+/* 
+	Most Mac displays
+ */
+
+ @media screen and (min-width:1440px){
+
+#dex-entry {
+	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+
+		.langs {
+
+			&:hover{
+				text-decoration: underline;
+				cursor:pointer;
+				
+			}
+		}
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+		
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+					border-bottom:3px solid #333;
+					border-right:3px solid #333;
+
+
+					.dex-entries-text {
+						border-bottom:3px solid #333;
+					}
+
+				}
+				
+			}
+		}
+
+
+	}
+}
+
+
+
+
+}
+
+/* 
+	Large displays
+ */
+
+@media screen and (min-width:1920px){
+
+#dex-entry {
+	color:white;
+
+	#language-selection-wrapper {
+		font-size:1.1em;
+
+		.langs {
+
+			&:hover{
+				text-decoration: underline;
+				cursor:pointer;
+				
+			}
+		}
+	}
+
+	#dex-info-entry-wrapper {
+		height:50vh;
+		
+		
+		#generation-wrapper{
+			
+			padding:0;
+
+			#generation-title {
+				font-size:1.5em;
+			}
+
+			.generations {
+				font-size:1.2em;
+				
+				
+
+				&:hover {
+					background:black;
+					cursor:pointer;
+				}
+			}
+
+		}
+
+		#generation-content-wrapper {
+			
+			margin-top:1%;
+			padding:1%;
+			.dex-entries {
+				
+				
+				height:12.5vh;
+				padding:1%;
+				margin-top:2%;
+				#innerdex {
+					background:#444;
+					height:118%;
+					font-size:1em;
+					padding:0;
+					border-bottom:3px solid #333;
+					border-right:3px solid #333;
+
+
+					.dex-entries-text {
+						border-bottom:3px solid #333;
+					}
+
+				}
+				
+			}
+		}
+
+
+	}
+}
+
+
+
+
 }
