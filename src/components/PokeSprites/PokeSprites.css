@@ -1,11 +1,17 @@
 #pokesprites {
   color: white;
-  background: rgba(65, 133, 166, 0.9);
-  height: 50vh; }
+  background: rgba(65, 133, 166, 0.9); }
 
 /* 
 	Phones
  */
+@media screen and (min-width: 320px) {
+  #pokesprites {
+    margin-bottom: 2%; }
+  #pokesprites #poke-wrapper .sprite-classes {
+    border-bottom: 3px solid #333;
+    padding: 0; } }
+
 /* 
 	Forgot which phone display this one was for
  */

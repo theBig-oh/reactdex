@@ -8,12 +8,13 @@ $mobileFontSize: 1.15em;
 
 #stat-display {
 	
-	height:135vh;
+	
 	margin-top:1%;
 	padding:0;
 	float:right;
-
+	display:inline-table;
 	background:rgba(191,187,65,0.4);
+	margin-bottom:2%;
 
 	#stat-title { 
 		font-size:1.2em;
@@ -145,15 +146,15 @@ $mobileFontSize: 1.15em;
  */
  @media screen and (min-width:375px){
 
-
 #stat-display {
 	
-	height:125vh;
+	
 	margin-top:1%;
 	padding:0;
 	float:right;
-
+	display:inline-table;
 	background:rgba(191,187,65,0.4);
+	margin-bottom:2%;
 
 	#stat-title { 
 		font-size:1.2em;
@@ -249,20 +250,22 @@ $mobileFontSize: 1.15em;
 	}
 
 	#right-side {
-
+		padding:0;
 		#base-stats-wrapper {
+			padding:0;
 			#base-stat-title {
-				font-size:1.5em;
+				font-size:1.2em;
 				
 			}
 			.stats {
-				height:8vh;
+				height:10vh;
 
 				.stat-names {
-					font-size:1.3em;
+					font-size:1.0em;
+					padding:0;
 				}
 				.stat-values {
-					height:50%;
+					height:40%;
 
 					#actual-value {
 						height:100%;
@@ -273,8 +276,6 @@ $mobileFontSize: 1.15em;
 		}
 	}
 }
-
-
 
 
 

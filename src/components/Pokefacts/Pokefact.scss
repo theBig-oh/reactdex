@@ -25,10 +25,10 @@
 	.pokemon-fact-display {
 
 		
-		height:180vh;
+		
 		border-radius:15px;
 		background:rgba(102,122,127,0.8);
-
+		display:inline-block;
 		position:relative;
 		margin-top:60%;
 		margin-bottom:30%;
@@ -36,13 +36,13 @@
 -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 		
-
+		padding:0;
 	}
 
 	#pokemon-display-left {
 
 		#pokemon-image-wrapper{
-			height:18%;
+			height:45vh;
 			padding:1%;
 			#pokemon-image {
 			
@@ -125,23 +125,24 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 	.pokemon-fact-display {
 
 		
-		height:168vh;
+		
 		border-radius:15px;
 		background:rgba(102,122,127,0.8);
-
+		display:inline-block;
 		position:relative;
 		margin-top:60%;
+		margin-bottom:30%;
 		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 		
-
+		padding:0;
 	}
 
 	#pokemon-display-left {
 
 		#pokemon-image-wrapper{
-			height:18%;
+			height:45vh;
 			padding:1%;
 			#pokemon-image {
 			
@@ -158,7 +159,7 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 
 			}
 			#poke-id {
-				font-size:1.75em;
+				font-size:2em;
 				text-align:right;
 				}
 			}
@@ -228,24 +229,24 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 	.pokemon-fact-display {
 
 		
-		height:106%;
+		
 		border-radius:15px;
 		background:rgba(102,122,127,0.8);
-
+		display:inline-block;
 		position:relative;
 		margin-top:30%;
-		margin-bottom:28%;
+		margin-bottom:30%;
 		-webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 		
-
+		padding:0;
 	}
 
 	#pokemon-display-left {
 
 		#pokemon-image-wrapper{
-			height:40%;
+			height:45vh;
 			padding:1%;
 			#pokemon-image {
 			
@@ -257,12 +258,12 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 			#pokemon-name {
 			border-bottom:3px solid #333;
 			#poke-name {
-				font-size:3em;
+				font-size:1.5em;
 				text-align:left;
 
 			}
 			#poke-id {
-				font-size:1em;
+				font-size:2em;
 				text-align:right;
 				}
 			}
@@ -314,18 +315,7 @@ box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
 
 }
 
-/* 
-	MDPI laptop displays
- */
-@media screen and (min-width:320px){
-
-
-
-
-
-}
-
-/* 
+/*
 	Most Mac displays
  */
 

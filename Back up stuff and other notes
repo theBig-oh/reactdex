@@ -1,0 +1,55 @@
+Back up stuff and other notes
+
+
+Was talking to Kehv aboout recursive functions. Wanted to save
+this one he showed me. 
+
+
+function flatten(input_array)
+{
+    var new_array = [];
+    
+    var element = input_array.shift()
+    
+    if(Array.isArray(element))
+    {
+       new_array = new_array.concat(flatten(element));
+    }
+    else
+    {
+        new_array = new_array.concat(element);
+    }
+    
+    if(input_array.length >0)
+        new_array = new_array.concat(flatten(input_array));
+    
+    return new_array;
+}
+
+This one is a pattern. While the other one, the one I wrote is more of anti pattern.
+----
+	Loops and recursion are sort of...each other's opposites.  
+	If you can write it as a loop, you can write it as a purely recursive function.
+	  And if you can do it with recursion, you can do it with only a loop (or two).
+
+----
+
+
+function flatten(array,saved){
+	
+	var newArray = saved ? undefined : []; //Still getting used to that ? operator.
+
+	for(var x=0; x < array.length; x++){
+	 	if(Array.isArray(array[x])){
+	 	    flatten(array[x]);
+	 	} else {
+	 	    newArray.push(array[x]);
+	 	}
+	}
+
+	return newArray;
+}
+
+This one is more of an anti pattern since its using that for loop
+
+

@@ -3,143 +3,150 @@
  */
 @media screen and (min-width: 320px) {
   #stat-display {
-    height: 135vh;
     margin-top: 1%;
     padding: 0;
     float: right;
-    background: rgba(191, 187, 65, 0.4); }
-    #stat-display #stat-title {
-      font-size: 1.2em; }
-    #stat-display #left-side #type-wrapper #type-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #type-wrapper .types {
-      font-size: 1em;
-      color: #eee; }
-    #stat-display #left-side #ability-wrapper #ability-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #ability-wrapper .ability {
-      font-size: 1.2em;
-      color: #eee;
-      text-align: right;
-      padding: 0; }
-      #stat-display #left-side #ability-wrapper .ability .slot-titles {
-        text-align: left; }
-    #stat-display #left-side #ability-wrapper #slot1 {
-      background: #FF9A25; }
-    #stat-display #left-side #ability-wrapper #slot2 {
-      background: #7F4D13; }
-    #stat-display #left-side #ability-wrapper #hidden-ability {
-      background: #402609; }
-    #stat-display #left-side #weight-wrapper #weight-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #weight-wrapper #weight {
-      padding: 0; }
-    #stat-display #left-side #weight-wrapper .weights {
-      padding: 0;
-      font-size: 1.2em;
-      background: #737F7A; }
-      #stat-display #left-side #weight-wrapper .weights .weight-title {
-        text-align: left; }
-      #stat-display #left-side #weight-wrapper .weights .weight-value {
-        text-align: right; }
-    #stat-display #left-side #height-wrapper #height-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #height-wrapper #height {
-      padding: 0;
-      background: #eee; }
-    #stat-display #left-side #height-wrapper .heights {
-      padding: 0;
-      font-size: 1.3em; }
-    #stat-display #left-side #height-wrapper .height-value {
-      text-align: right; }
-    #stat-display #right-side {
-      padding: 0; }
-      #stat-display #right-side #base-stats-wrapper {
-        padding: 0; }
-        #stat-display #right-side #base-stats-wrapper #base-stat-title {
-          font-size: 1.2em; }
-        #stat-display #right-side #base-stats-wrapper .stats {
-          height: 10vh; }
-          #stat-display #right-side #base-stats-wrapper .stats .stat-names {
-            font-size: 1.0em;
-            padding: 0; }
-          #stat-display #right-side #base-stats-wrapper .stats .stat-values {
-            height: 40%; }
-            #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
-              height: 100%; } }
+    display: inline-table;
+    background: rgba(191, 187, 65, 0.4);
+    margin-bottom: 2%; }
+  #stat-display #stat-title {
+    font-size: 1.2em; }
+  #stat-display #left-side #type-wrapper #type-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #type-wrapper .types {
+    font-size: 1em;
+    color: #eee; }
+  #stat-display #left-side #ability-wrapper #ability-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #ability-wrapper .ability {
+    font-size: 1.2em;
+    color: #eee;
+    text-align: right;
+    padding: 0; }
+  #stat-display #left-side #ability-wrapper .ability .slot-titles {
+    text-align: left; }
+  #stat-display #left-side #ability-wrapper #slot1 {
+    background: #FF9A25; }
+  #stat-display #left-side #ability-wrapper #slot2 {
+    background: #7F4D13; }
+  #stat-display #left-side #ability-wrapper #hidden-ability {
+    background: #402609; }
+  #stat-display #left-side #weight-wrapper #weight-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #weight-wrapper #weight {
+    padding: 0; }
+  #stat-display #left-side #weight-wrapper .weights {
+    padding: 0;
+    font-size: 1.2em;
+    background: #737F7A; }
+  #stat-display #left-side #weight-wrapper .weights .weight-title {
+    text-align: left; }
+  #stat-display #left-side #weight-wrapper .weights .weight-value {
+    text-align: right; }
+  #stat-display #left-side #height-wrapper #height-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #height-wrapper #height {
+    padding: 0;
+    background: #eee; }
+  #stat-display #left-side #height-wrapper .heights {
+    padding: 0;
+    font-size: 1.3em; }
+  #stat-display #left-side #height-wrapper .height-value {
+    text-align: right; }
+  #stat-display #right-side {
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper {
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper #base-stat-title {
+    font-size: 1.2em; }
+  #stat-display #right-side #base-stats-wrapper .stats {
+    height: 10vh; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-names {
+    font-size: 1.0em;
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values {
+    height: 40%; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
+    height: 100%; } }
 
 /* 
 	Forgot which phone display this one was for
  */
 @media screen and (min-width: 375px) {
   #stat-display {
-    height: 125vh;
     margin-top: 1%;
     padding: 0;
     float: right;
-    background: rgba(191, 187, 65, 0.4); }
-    #stat-display #stat-title {
-      font-size: 1.2em; }
-    #stat-display #left-side #type-wrapper #type-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #type-wrapper .types {
-      font-size: 1em;
-      color: #eee; }
-    #stat-display #left-side #ability-wrapper #ability-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #ability-wrapper .ability {
-      font-size: 1.2em;
-      color: #eee;
-      text-align: right;
-      padding: 0; }
-      #stat-display #left-side #ability-wrapper .ability .slot-titles {
-        text-align: left; }
-    #stat-display #left-side #ability-wrapper #slot1 {
-      background: #FF9A25; }
-    #stat-display #left-side #ability-wrapper #slot2 {
-      background: #7F4D13; }
-    #stat-display #left-side #ability-wrapper #hidden-ability {
-      background: #402609; }
-    #stat-display #left-side #weight-wrapper #weight-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #weight-wrapper #weight {
-      padding: 0; }
-    #stat-display #left-side #weight-wrapper .weights {
-      padding: 0;
-      font-size: 1.2em;
-      background: #737F7A; }
-      #stat-display #left-side #weight-wrapper .weights .weight-title {
-        text-align: left; }
-      #stat-display #left-side #weight-wrapper .weights .weight-value {
-        text-align: right; }
-    #stat-display #left-side #height-wrapper #height-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #height-wrapper #height {
-      padding: 0;
-      background: #eee; }
-    #stat-display #left-side #height-wrapper .heights {
-      padding: 0;
-      font-size: 1.3em; }
-    #stat-display #left-side #height-wrapper .height-value {
-      text-align: right; }
-    #stat-display #right-side #base-stats-wrapper #base-stat-title {
-      font-size: 1.5em; }
-    #stat-display #right-side #base-stats-wrapper .stats {
-      height: 8vh; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-names {
-        font-size: 1.3em; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-values {
-        height: 50%; }
-        #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
-          height: 100%; } }
+    display: inline-table;
+    background: rgba(191, 187, 65, 0.4);
+    margin-bottom: 2%; }
+  #stat-display #stat-title {
+    font-size: 1.2em; }
+  #stat-display #left-side #type-wrapper #type-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #type-wrapper .types {
+    font-size: 1em;
+    color: #eee; }
+  #stat-display #left-side #ability-wrapper #ability-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #ability-wrapper .ability {
+    font-size: 1.2em;
+    color: #eee;
+    text-align: right;
+    padding: 0; }
+  #stat-display #left-side #ability-wrapper .ability .slot-titles {
+    text-align: left; }
+  #stat-display #left-side #ability-wrapper #slot1 {
+    background: #FF9A25; }
+  #stat-display #left-side #ability-wrapper #slot2 {
+    background: #7F4D13; }
+  #stat-display #left-side #ability-wrapper #hidden-ability {
+    background: #402609; }
+  #stat-display #left-side #weight-wrapper #weight-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #weight-wrapper #weight {
+    padding: 0; }
+  #stat-display #left-side #weight-wrapper .weights {
+    padding: 0;
+    font-size: 1.2em;
+    background: #737F7A; }
+  #stat-display #left-side #weight-wrapper .weights .weight-title {
+    text-align: left; }
+  #stat-display #left-side #weight-wrapper .weights .weight-value {
+    text-align: right; }
+  #stat-display #left-side #height-wrapper #height-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #height-wrapper #height {
+    padding: 0;
+    background: #eee; }
+  #stat-display #left-side #height-wrapper .heights {
+    padding: 0;
+    font-size: 1.3em; }
+  #stat-display #left-side #height-wrapper .height-value {
+    text-align: right; }
+  #stat-display #right-side {
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper {
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper #base-stat-title {
+    font-size: 1.2em; }
+  #stat-display #right-side #base-stats-wrapper .stats {
+    height: 10vh; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-names {
+    font-size: 1.0em;
+    padding: 0; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values {
+    height: 40%; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
+    height: 100%; } }
 
 /* 
 	Tablets 
@@ -151,65 +158,65 @@
     padding: 0;
     float: right;
     background: rgba(191, 187, 65, 0.4); }
-    #stat-display #stat-title {
-      font-size: 1.2em; }
-    #stat-display #left-side #type-wrapper #type-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #type-wrapper .types {
-      font-size: 1em;
-      color: #eee; }
-    #stat-display #left-side #ability-wrapper #ability-header {
-      font-size: 1.15em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #ability-wrapper .ability {
-      font-size: 1.2em;
-      color: #eee;
-      text-align: right;
-      padding: 0; }
-      #stat-display #left-side #ability-wrapper .ability .slot-titles {
-        text-align: left; }
-    #stat-display #left-side #ability-wrapper #slot1 {
-      background: #FF9A25; }
-    #stat-display #left-side #ability-wrapper #slot2 {
-      background: #7F4D13; }
-    #stat-display #left-side #ability-wrapper #hidden-ability {
-      background: #402609; }
-    #stat-display #left-side #weight-wrapper #weight-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #weight-wrapper #weight {
-      padding: 0; }
-    #stat-display #left-side #weight-wrapper .weights {
-      padding: 0;
-      font-size: 1.2em;
-      background: #737F7A; }
-      #stat-display #left-side #weight-wrapper .weights .weight-title {
-        text-align: left; }
-      #stat-display #left-side #weight-wrapper .weights .weight-value {
-        text-align: right; }
-    #stat-display #left-side #height-wrapper #height-title {
-      font-size: 1.15em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #height-wrapper #height {
-      padding: 0;
-      background: #eee; }
-    #stat-display #left-side #height-wrapper .heights {
-      padding: 0;
-      font-size: 1.3em; }
-    #stat-display #left-side #height-wrapper .height-value {
-      text-align: right; }
-    #stat-display #right-side #base-stats-wrapper #base-stat-title {
-      font-size: 1.5em; }
-    #stat-display #right-side #base-stats-wrapper .stats {
-      height: 3vh;
-      margin-bottom: 4%; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-names {
-        font-size: 1.3em; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-values {
-        height: 50%; }
-        #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
-          height: 100%; } }
+  #stat-display #stat-title {
+    font-size: 1.2em; }
+  #stat-display #left-side #type-wrapper #type-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #type-wrapper .types {
+    font-size: 1em;
+    color: #eee; }
+  #stat-display #left-side #ability-wrapper #ability-header {
+    font-size: 1.15em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #ability-wrapper .ability {
+    font-size: 1.2em;
+    color: #eee;
+    text-align: right;
+    padding: 0; }
+  #stat-display #left-side #ability-wrapper .ability .slot-titles {
+    text-align: left; }
+  #stat-display #left-side #ability-wrapper #slot1 {
+    background: #FF9A25; }
+  #stat-display #left-side #ability-wrapper #slot2 {
+    background: #7F4D13; }
+  #stat-display #left-side #ability-wrapper #hidden-ability {
+    background: #402609; }
+  #stat-display #left-side #weight-wrapper #weight-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #weight-wrapper #weight {
+    padding: 0; }
+  #stat-display #left-side #weight-wrapper .weights {
+    padding: 0;
+    font-size: 1.2em;
+    background: #737F7A; }
+  #stat-display #left-side #weight-wrapper .weights .weight-title {
+    text-align: left; }
+  #stat-display #left-side #weight-wrapper .weights .weight-value {
+    text-align: right; }
+  #stat-display #left-side #height-wrapper #height-title {
+    font-size: 1.15em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #height-wrapper #height {
+    padding: 0;
+    background: #eee; }
+  #stat-display #left-side #height-wrapper .heights {
+    padding: 0;
+    font-size: 1.3em; }
+  #stat-display #left-side #height-wrapper .height-value {
+    text-align: right; }
+  #stat-display #right-side #base-stats-wrapper #base-stat-title {
+    font-size: 1.5em; }
+  #stat-display #right-side #base-stats-wrapper .stats {
+    height: 3vh;
+    margin-bottom: 4%; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-names {
+    font-size: 1.3em; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values {
+    height: 50%; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
+    height: 100%; } }
 
 /* 
 	MDPI laptop displays
@@ -227,62 +234,62 @@
     padding: 0;
     float: right;
     background: rgba(191, 187, 65, 0.4); }
-    #stat-display #stat-title {
-      font-size: 2em; }
-    #stat-display #left-side #type-wrapper #type-header {
-      font-size: 1.5em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #type-wrapper .types {
-      font-size: 1.2em;
-      color: #eee; }
-    #stat-display #left-side #ability-wrapper #ability-header {
-      font-size: 1.5em;
-      border-bottom: 3px solid #333; }
-    #stat-display #left-side #ability-wrapper .ability {
-      font-size: 1.2em;
-      color: #eee;
-      text-align: right;
-      padding: 0; }
-      #stat-display #left-side #ability-wrapper .ability .slot-titles {
-        text-align: left; }
-    #stat-display #left-side #ability-wrapper #slot1 {
-      background: #FF9A25; }
-    #stat-display #left-side #ability-wrapper #slot2 {
-      background: #7F4D13; }
-    #stat-display #left-side #ability-wrapper #hidden-ability {
-      background: #402609; }
-    #stat-display #left-side #weight-wrapper #weight-title {
-      font-size: 1.5em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #weight-wrapper #weight {
-      padding: 0; }
-    #stat-display #left-side #weight-wrapper .weights {
-      padding: 0;
-      font-size: 1.2em;
-      background: #737F7A; }
-      #stat-display #left-side #weight-wrapper .weights .weight-title {
-        text-align: left; }
-      #stat-display #left-side #weight-wrapper .weights .weight-value {
-        text-align: right; }
-    #stat-display #left-side #height-wrapper #height-title {
-      font-size: 1.5em;
-      border-bottom: 2px solid #333; }
-    #stat-display #left-side #height-wrapper #height {
-      padding: 0;
-      background: #eee; }
-    #stat-display #left-side #height-wrapper .heights {
-      padding: 0;
-      font-size: 1.3em; }
-    #stat-display #left-side #height-wrapper .height-value {
-      text-align: right; }
-    #stat-display #right-side #base-stats-wrapper #base-stat-title {
-      font-size: 1.5em;
-      border-bottom: 2px none; }
-    #stat-display #right-side #base-stats-wrapper .stats {
-      height: 5vh; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-names {
-        font-size: 1.3em; }
-      #stat-display #right-side #base-stats-wrapper .stats .stat-values {
-        height: 50%; }
-        #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
-          height: 100%; } }
+  #stat-display #stat-title {
+    font-size: 2em; }
+  #stat-display #left-side #type-wrapper #type-header {
+    font-size: 1.5em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #type-wrapper .types {
+    font-size: 1.2em;
+    color: #eee; }
+  #stat-display #left-side #ability-wrapper #ability-header {
+    font-size: 1.5em;
+    border-bottom: 3px solid #333; }
+  #stat-display #left-side #ability-wrapper .ability {
+    font-size: 1.2em;
+    color: #eee;
+    text-align: right;
+    padding: 0; }
+  #stat-display #left-side #ability-wrapper .ability .slot-titles {
+    text-align: left; }
+  #stat-display #left-side #ability-wrapper #slot1 {
+    background: #FF9A25; }
+  #stat-display #left-side #ability-wrapper #slot2 {
+    background: #7F4D13; }
+  #stat-display #left-side #ability-wrapper #hidden-ability {
+    background: #402609; }
+  #stat-display #left-side #weight-wrapper #weight-title {
+    font-size: 1.5em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #weight-wrapper #weight {
+    padding: 0; }
+  #stat-display #left-side #weight-wrapper .weights {
+    padding: 0;
+    font-size: 1.2em;
+    background: #737F7A; }
+  #stat-display #left-side #weight-wrapper .weights .weight-title {
+    text-align: left; }
+  #stat-display #left-side #weight-wrapper .weights .weight-value {
+    text-align: right; }
+  #stat-display #left-side #height-wrapper #height-title {
+    font-size: 1.5em;
+    border-bottom: 2px solid #333; }
+  #stat-display #left-side #height-wrapper #height {
+    padding: 0;
+    background: #eee; }
+  #stat-display #left-side #height-wrapper .heights {
+    padding: 0;
+    font-size: 1.3em; }
+  #stat-display #left-side #height-wrapper .height-value {
+    text-align: right; }
+  #stat-display #right-side #base-stats-wrapper #base-stat-title {
+    font-size: 1.5em;
+    border-bottom: 2px none; }
+  #stat-display #right-side #base-stats-wrapper .stats {
+    height: 5vh; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-names {
+    font-size: 1.3em; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values {
+    height: 50%; }
+  #stat-display #right-side #base-stats-wrapper .stats .stat-values #actual-value {
+    height: 100%; } }

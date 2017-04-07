@@ -6,10 +6,12 @@
 
 #dex-entry {
 	color:white;
+	padding:0;
+	margin-bottom:2%;
 
 	#language-selection-wrapper {
 		font-size:1.1em;
-
+		padding:0;
 		.langs {
 
 			&:hover{
@@ -21,8 +23,8 @@
 	}
 
 	#dex-info-entry-wrapper {
-		height:50vh;
 		
+		padding:0;
 		
 		#generation-wrapper{
 			
@@ -30,11 +32,13 @@
 
 			#generation-title {
 				font-size:1.5em;
+				padding:0;
 			}
 
 			.generations {
 				font-size:1.2em;
-				
+				text-align:center;
+				padding:0;
 				
 
 				&:hover {
@@ -52,12 +56,12 @@
 			.dex-entries {
 				
 				
-				height:12.5vh;
+				
 				padding:1%;
-				margin-top:2%;
+				margin-top:21%;
 				#innerdex {
 					background:#444;
-					height:118%;
+					
 					font-size:1em;
 					padding:0;
 					border-bottom:3px solid #333;
@@ -89,10 +93,12 @@
 
 #dex-entry {
 	color:white;
+	padding:0;
+	margin-bottom:2%;
 
 	#language-selection-wrapper {
 		font-size:1.1em;
-
+		padding:0;
 		.langs {
 
 			&:hover{
@@ -104,8 +110,8 @@
 	}
 
 	#dex-info-entry-wrapper {
-		height:50vh;
 		
+		padding:0;
 		
 		#generation-wrapper{
 			
@@ -113,11 +119,13 @@
 
 			#generation-title {
 				font-size:1.5em;
+				padding:0;
 			}
 
 			.generations {
 				font-size:1.2em;
-				
+				text-align:center;
+				padding:0;
 				
 
 				&:hover {
@@ -135,12 +143,12 @@
 			.dex-entries {
 				
 				
-				height:12.5vh;
+				
 				padding:1%;
-				margin-top:2%;
+				margin-top:21%;
 				#innerdex {
 					background:#444;
-					height:118%;
+					
 					font-size:1em;
 					padding:0;
 					border-bottom:3px solid #333;
@@ -159,7 +167,6 @@
 
 	}
 }
-
 
 
 
@@ -174,10 +181,12 @@
 
 #dex-entry {
 	color:white;
+	padding:0;
+	margin-bottom:2%;
 
 	#language-selection-wrapper {
 		font-size:1.1em;
-
+		padding:0;
 		.langs {
 
 			&:hover{
@@ -189,8 +198,8 @@
 	}
 
 	#dex-info-entry-wrapper {
-		height:50vh;
 		
+		padding:0;
 		
 		#generation-wrapper{
 			
@@ -198,11 +207,13 @@
 
 			#generation-title {
 				font-size:1.5em;
+				padding:0;
 			}
 
 			.generations {
 				font-size:1.2em;
-				
+				text-align:center;
+				padding:0;
 				
 
 				&:hover {
@@ -220,12 +231,12 @@
 			.dex-entries {
 				
 				
-				height:12.5vh;
+				
 				padding:1%;
-				margin-top:2%;
+				margin-top:5%;
 				#innerdex {
 					background:#444;
-					height:118%;
+					
 					font-size:1em;
 					padding:0;
 					border-bottom:3px solid #333;
@@ -244,6 +255,7 @@
 
 	}
 }
+
 
 
 
@@ -253,7 +265,7 @@
 /* 
 	MDPI laptop displays
  */
-@media screen and (min-width:320px){
+/* @media screen and (min-width:320px){
 #dex-entry {
 	color:white;
 
@@ -302,7 +314,7 @@
 			.dex-entries {
 				
 				
-				height:12.5vh;
+			
 				padding:1%;
 				margin-top:2%;
 				#innerdex {
@@ -332,85 +344,12 @@
 
 
 }
-
+ */
 /* 
 	Most Mac displays
  */
 
  @media screen and (min-width:1440px){
-
-#dex-entry {
-	color:white;
-
-	#language-selection-wrapper {
-		font-size:1.1em;
-
-		.langs {
-
-			&:hover{
-				text-decoration: underline;
-				cursor:pointer;
-				
-			}
-		}
-	}
-
-	#dex-info-entry-wrapper {
-		height:50vh;
-		
-		
-		#generation-wrapper{
-			
-			padding:0;
-
-			#generation-title {
-				font-size:1.5em;
-			}
-
-			.generations {
-				font-size:1.2em;
-				
-				
-
-				&:hover {
-					background:black;
-					cursor:pointer;
-				}
-			}
-
-		}
-
-		#generation-content-wrapper {
-			
-			margin-top:1%;
-			padding:1%;
-			.dex-entries {
-				
-				
-				height:12.5vh;
-				padding:1%;
-				margin-top:2%;
-				#innerdex {
-					background:#444;
-					height:118%;
-					font-size:1em;
-					padding:0;
-					border-bottom:3px solid #333;
-					border-right:3px solid #333;
-
-
-					.dex-entries-text {
-						border-bottom:3px solid #333;
-					}
-
-				}
-				
-			}
-		}
-
-
-	}
-}
 
 
 

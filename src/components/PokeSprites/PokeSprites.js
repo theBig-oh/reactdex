@@ -172,8 +172,8 @@ function Sprites(id){
 			};
 			console.log('found');
 		
-			var div = 		<div id=''className='col-xs-12 col-sm-12 col-md-6 col-lg-6 sprite-classes'>
-								<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+			var div = 		<div id=''className='col-xs-12 col-sm-6 col-md-6 col-lg-6 sprite-classes'>
+								<div id=''className='col-xs-12 col-sm-12 col-md-12 col-lg-12 sprite-names'>
 							
 									{sprite.type}
 							

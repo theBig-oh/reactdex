@@ -121,7 +121,7 @@ function DexEntries(lang,gen,dex){
 	var dextext = [];
 
 	for(var x=0;x < collectedDex.length; x++){
-		var div = 	<div id={'dex-entry'+x} className='col-xs-12 col-sm-12 col-md-6 col-lg-6 dex-entries'>
+		var div = 	<div id={'dex-entry'+x} className='col-xs-12 col-sm-6 col-md-6 col-lg-6 dex-entries'>
 								<div id='innerdex'className='col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
 							
 									<div id={'dex-entry-text'+x}className='col-xs-12 col-sm-12 col-md-12 col-lg-12 dex-entries-text'>
@@ -244,6 +244,10 @@ class DexEntry extends Component {
 
 			Some pokemon may not have the language available. This filters it in selection first.
 			
+
+			Refactor for later: I... have no clue why I made this return as an array instead as an object.
+
+			
 		*/
 		for(var x = 0; x < pokemonlanguages.length; x++){
 			for(var y=0;y < langs.length; y++){
@@ -292,7 +296,7 @@ class DexEntry extends Component {
 
 											return (
 
-														<div key={key}id={'lang-selection-'+id} className='col-xs-12 col-sm-12 col-md-1 col-lg-1 langs' onClick={(event)=>self.handleLangClick(langObject,event)} style={styleObject}>
+														<div key={key}id={'lang-selection-'+id} className='col-xs-6 col-sm-6 col-md-1 col-lg-1 langs' onClick={(event)=>self.handleLangClick(langObject,event)} style={styleObject}>
 													
 															{key[0]}
 													
@@ -333,7 +337,7 @@ class DexEntry extends Component {
 
 
 									  		 				return (
-									  		 						<div style={styleObject}key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
+									  		 						<div style={styleObject}key={id}id=''className='col-xs-2 col-sm-2 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
 									  		 					
 									  		 							{key.name}
 									  		 					
@@ -344,7 +348,7 @@ class DexEntry extends Component {
 
 									  		 			} else {
 									  		 				return (
-									  		 						<div key={id}id=''className='col-xs-12 col-sm-12 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
+									  		 						<div key={id}id=''className='col-xs-2 col-sm-2 col-md-1 col-lg-1 generations' onClick={(event)=>self.handleGenClick(key.gen,event)} >
 									  		 					
 									  		 							{key.name}
 									  		 					
@@ -364,7 +368,7 @@ class DexEntry extends Component {
 									  		 
 									  
 									  	</div>
-									  	<div id='generation-content-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+									  	<div id='generation-content-wrapper'className='col-xs-12 col-sm-12 col-md-12 col-lg-12'style={dexStyle}>
 									  	
 									  			{DexEntries(this.state.currentLang,this.state.currentGen,dexstuff)}
 									  	
