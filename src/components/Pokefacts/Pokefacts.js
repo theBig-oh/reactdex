@@ -5,7 +5,7 @@ import { Link, Router} from 'react-router';
 import StatDisplay from '../StatDisplay/StatDisplay';
 import DexEntry from '../DexEntry/DexEntry';
 import PokeSprites from '../PokeSprites/PokeSprites';
-
+ 
 /*
 	
 	Data either gets the "Actual Pokemon" data if typed is true (Actual stats)
